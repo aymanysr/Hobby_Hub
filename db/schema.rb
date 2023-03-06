@@ -29,8 +29,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_153226) do
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id", null: false
+    t.bigint "post_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -51,10 +53,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_153226) do
     t.text "content"
     t.bigint "user_id", null: false
     t.bigint "group_id", null: false
-    t.bigint "comment_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["comment_id"], name: "index_posts_on_comment_id"
     t.index ["group_id"], name: "index_posts_on_group_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
@@ -86,11 +86,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_153226) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "groups", "categories"
   add_foreign_key "groups", "cities"
   add_foreign_key "groups", "users"
-  add_foreign_key "posts", "comments"
   add_foreign_key "posts", "groups"
   add_foreign_key "posts", "users"
   add_foreign_key "user_groups", "groups"
