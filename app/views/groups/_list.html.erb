@@ -2,7 +2,8 @@
   <div data-search-groups-target="list">
     <p class="h3">Groups</p>
     <% @groups.each do |group| %>
-    <h1><%= group.title %>  </h1>
+    <h1><%= group.title %></h1>
+    <%= cl_image_tag group.photo.key, width: 150, height: 150, crop: :thumb %>
     <% end %>
   </div>
 </div>
