@@ -19,8 +19,12 @@
         placeholder: "Find a movie"
       %>
 
-      <%= submit_tag "Search", class: "btn btn-flat" %>
+      <%= submit_tag "Search", class: "btn-floating" %>
     <% end %>
+  </div>
+
+   <div>
+    <h2>Trending Groups</h2>
   </div>
   <div class="d-flex justify-content-around flex-wrap">
     <% @groups.each do | group | %>
