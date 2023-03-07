@@ -1,6 +1,10 @@
 class GroupsController < ApplicationController
   def index
-    @groups = Group.all
+    @groups = Group.where("title ILIKE ?", "%#{params[:query]}%")
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "groups/list", locals: { groups: @groups }, formats: [:html] }
+    end
   end
 
   def show
