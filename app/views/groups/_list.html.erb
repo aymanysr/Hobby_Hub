@@ -1,9 +1,15 @@
-<div class="card-container">
-  <div data-search-groups-target="list">
+<div id="list" data-search-groups-target="list">
+  <div class="card-container">
     <p class="h3">Groups</p>
     <% @groups.each do |group| %>
-    <h1><%= group.title %></h1>
-    <%= cl_image_tag group.photo.key, width: 150, height: 150, crop: :thumb %>
+      <div class="card">
+        <div class="card_image">
+          <%= cl_image_tag group.photo.key, width: 150, height: 150, crop: :thumb %>
+        </div>
+        <div class="card-title">
+          <h3><%= group.title %></h3>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>

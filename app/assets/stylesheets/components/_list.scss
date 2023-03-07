@@ -1,0 +1,23 @@
+#list{
+  .card-container{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin: auto;
+  }
+  .card{
+    display: flex;
+    flex-direction: row; /* change flex direction to row */
+    align-items: center; /* vertically center the image and title */
+  }
+
+  .card-image{
+    width: 30%;
+    margin-right: 1rem; /* add margin to create space between image and title */
+  }
+
+  .card-title{
+    width: 70%;
+  }
+
+}
