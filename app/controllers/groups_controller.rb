@@ -1,5 +1,4 @@
 class GroupsController < ApplicationController
-
   def index
     @groups = Group.where("title ILIKE ?", "%#{params[:query]}%")
     respond_to do |format|
