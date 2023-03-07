@@ -1,23 +1,40 @@
 
 <div id="ban">
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url("parker-gibbons-Wx6oQRl7Wa0-unsplash.jpg") %>);">
-  <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url("parker-gibbons-Wx6oQRl7Wa0-unsplash.jpg") %>);">
+    <div class="container">
+      <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+      <p>Change your life and learn to code at one of our campuses around the world.</p>
+      <a class="btn btn-flat" href="#">Apply now</a>
+    </div>
+  </div>
+
+  <div>
+    <h1>What Are You looking for?</h1>
+  </div>
+  <div class="container-e d-flex  ">
+    <%= form_with url: groups_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a movie"
+      %>
+
+      <%= submit_tag "Search", class: "btn btn-flat" %>
+    <% end %>
+  </div>
+  <div class="d-flex justify-content-around flex-wrap">
+    <% @groups.each do | group | %>
+      <div id="dd">
+          <div class="container-k">
+            <div class="drop">
+              <div class="content">
+                <h3><%= group.title %> </h3>
+                <p><%= group.description %> </p>
+                <a href="" class="read">Read More</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    <% end %>
   </div>
 </div>
-</div>
-<h1>What Are You looking for?</h1>
-</div>
-<div class="container-e d-flex  ">
-  <%= form_with url: groups_path, method: :get, class: "d-flex" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a movie"
-    %>
-
-    <%= submit_tag "Search", class: "btn btn-flat" %>
-  <% end %>
-
