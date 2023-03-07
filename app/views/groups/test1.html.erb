@@ -1,0 +1,15 @@
+<h1><%= @group.name %></h1>
+
+<p><%= @group.description %></p>
+
+<% @group.posts.each do |post| %>
+  <h2><%= post.title %></h2>
+  <p><%= post.content %></p>
+<% end %>
+
+<h3>users:</h3>
+
+<% @group.users.each do |user| %>
+  <p><%= user.name %></p>
+    <p><%= user.avatar %></p>
+<% end %>

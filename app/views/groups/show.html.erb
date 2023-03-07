@@ -1,134 +1,31 @@
+<div class="card">
+  <div class="group-content">
 
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-    <div>
-			<img alt="Bootstrap Image Preview" src="https://images.unsplash.com/photo-1434993568367-36f24aa04d2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
-			<h1 class="text-center">
-			  <%= @group.title %>
-			</h1>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<h3>
-          About
-			</h3>
-			<p>
-			  <%= @group.description %>
-			</p>
-			<button type="button" class="btn btn-success">
-				Button
-			</button>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-8">
-			<form role="form">
-				<div class="form-group">
+    <div class="parent">
+      <div class="div1">
+        <div class="group-image ">
+          <img class="rounded" alt="Default img" src="https://images.unsplash.com/photo-1434993568367-36f24aa04d2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
+        </div>
+      </div>
+      <div class="div2">
+        <h2><i class="fas fa-thumbs-up"></i> <%= @group.title  %>
+        </h2>
+      </div>
+      <div class="div3">
+        <p>
+          <i class="fa-solid fa-location-dot"></i>
+          <%= @group.city.name  %>
+        </p>
+      </div>
+      <div class="div4">
+        <p><%= @group.description  %></p>
+      </div>
 
-					<label for="exampleInputEmail1">
-						Email address
-					</label>
-					<input type="email" class="form-control" id="exampleInputEmail1" />
-				</div>
-				<div class="form-group">
+      <div class="div5">
+        <small class="cardd-members"><%= "99 members" %></small>
+        <button type="button" class="bttn bttn-danger -small card-bttn">Join Group</button>
+      </div>
+    </div>
 
-					<label for="exampleInputPassword1">
-						Password
-					</label>
-					<input type="password" class="form-control" id="exampleInputPassword1" />
-				</div>
-				<div class="form-group">
-
-					<label for="exampleInputFile">
-						File input
-					</label>
-					<input type="file" class="form-control-file" id="exampleInputFile" />
-					<p class="help-block">
-						Example block-level help text here.
-					</p>
-				</div>
-				<div class="checkbox">
-
-					<label>
-						<input type="checkbox" /> Check me out
-					</label>
-				</div>
-				<button type="submit" class="btn btn-primary">
-					Submit
-				</button>
-			</form>
-		</div>
-		<div class="col-md-4">
-
-			<address>
-				 <strong>Twitter, Inc.</strong><br /> 795 Folsom Ave, Suite 600<br /> San Francisco, CA 94107<br /> <abbr title="Phone">P:</abbr> (123) 456-7890
-			</address>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-8">
-			<div class="card">
-				<h5 class="card-header">
-					Card title
-				</h5>
-				<div class="card-body">
-					<p class="card-text">
-						Card content
-					</p>
-				</div>
-				<div class="card-footer">
-					Card footer
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="card">
-				<h5 class="card-header">
-					Card title
-				</h5>
-				<div class="card-body">
-					<p class="card-text">
-						Card content
-					</p>
-				</div>
-				<div class="card-footer">
-					Card footer
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-8">
-			<div class="card">
-				<h5 class="card-header">
-					Card title
-				</h5>
-				<div class="card-body">
-					<p class="card-text">
-						Card content
-					</p>
-				</div>
-				<div class="card-footer">
-					Card footer
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="card">
-				<h5 class="card-header">
-					Card title
-				</h5>
-				<div class="card-body">
-					<p class="card-text">
-						Card content
-					</p>
-				</div>
-				<div class="card-footer">
-					Card footer
-				</div>
-			</div>
-		</div>
-	</div>
+  </div>
 </div>
