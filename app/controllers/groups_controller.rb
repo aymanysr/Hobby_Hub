@@ -4,7 +4,10 @@ class GroupsController < ApplicationController
       @groups = Group.where("title ILIKE ?", "%#{params[:query]}%")
     else
       @groups = Group.all
-
+    end
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "groups/list", locals: { groups: @groups }, formats: [:html] }
     end
   end
 
