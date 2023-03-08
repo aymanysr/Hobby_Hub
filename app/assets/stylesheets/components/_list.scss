@@ -52,6 +52,7 @@ form[data-search-groups-target="form"] {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 0.5rem;
     overflow: hidden;
+    position: relative;
 
     .card-image {
       width: 30%;
@@ -71,6 +72,23 @@ form[data-search-groups-target="form"] {
       h3 {
         font-size: 1.2rem;
         color: #3e4749;
+      }
+    }
+    .join-btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      margin: 0;
+      padding: 0.5rem 1rem;
+      background-color: #ff4014;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 1.2rem;
+      transition: background-color 0.3s ease-in-out;
+      text-decoration: none;
+      &:hover {
+        background-color: #faa000;
       }
     }
   }
