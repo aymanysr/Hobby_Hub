@@ -1,15 +1,16 @@
 
 <div id="ban">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url("parker-gibbons-Wx6oQRl7Wa0-unsplash.jpg") %>);">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url("https://images.unsplash.com/photo-1532715908812-ec49a09ef7db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80") %>);">
     <div class="container">
-      <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-      <p>Change your life and learn to code at one of our campuses around the world.</p>
-      <a class="btn btn-flat" href="#">Apply now</a>
+      <h1>WE <span class="auto-input"></span></h1>
+      <p>Change your life and learn to code at  one of our campuses around the world.</p>
+      <a class="d" href="#">Apply now</a>
     </div>
   </div>
 
   <div>
     <h1>What Are You looking for?</h1>
+
   </div>
   <div class="container-e d-flex  ">
     <%= form_with url: groups_path, method: :get, class: "d-flex" do %>
@@ -22,7 +23,7 @@
       <%= submit_tag "Search", class: "btn-floating" %>
     <% end %>
   </div>
-
+ <hr>
    <div>
     <h2>Trending Groups</h2>
   </div>
@@ -44,4 +45,6 @@
       </div>
     <% end %>
   </div>
+ <hr>
+
 </div>
