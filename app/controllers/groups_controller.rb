@@ -1,7 +1,12 @@
 class GroupsController < ApplicationController
-
   def index
-    @groups = Group.where("title ILIKE ?", "%#{params[:query]}%")
+    if params[:query].present?
+      @groups = Group.joins(:category, :city)
+                     .where("title ILIKE :query OR categories.name ILIKE :query OR cities.name ILIKE :query",
+                            query: "%#{params[:query]}%")
+    else
+      @groups = Group.all
+    end
     respond_to do |format|
       format.html # Follow regular flow of Rails
       format.text { render partial: "groups/list", locals: { groups: @groups }, formats: [:html] }
@@ -17,10 +22,8 @@ class GroupsController < ApplicationController
   end
 
   def create
-
   end
 
   def edit
-
   end
 end
