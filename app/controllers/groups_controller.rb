@@ -1,7 +1,9 @@
 class GroupsController < ApplicationController
   def index
     if params[:query].present?
-      @groups = Group.where("title ILIKE ?", "%#{params[:query]}%")
+      @groups = Group.joins(:category, :city)
+                     .where("title ILIKE :query OR categories.name ILIKE :query OR cities.name ILIKE :query",
+                            query: "%#{params[:query]}%")
     else
       @groups = Group.all
     end
