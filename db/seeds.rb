@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
 require 'faker'
 
 puts "destroying cities"
@@ -62,15 +63,39 @@ sometwo = User.create!(
 )
 
 puts "creating groups"
-10.times do
-  Group.create!(
-    title: Faker::Hobby.activity,
-    description: Faker::Lorem.sentence(word_count: 15),
-    user: [someone, sometwo].sample,
-    city: [casablanca, essaouira, marrakech].sample,
-    category: [music, skate, coding].sample
-  )
-end
+
+coding_file = URI.open("https://i.pinimg.com/564x/c6/5d/41/c65d41095846c3ced34638f8d2009518.jpg")
+coding_seed = Group.new(
+  title: "Coding enthusiasts!",
+  description: Faker::Lorem.sentence(word_count: 15),
+  user: [someone, sometwo].sample,
+  city: [casablanca, essaouira, marrakech].sample,
+  category: coding
+)
+coding_seed.photo.attach(io: coding_file, filename: "coding.jpg", content_type: "image/jpg")
+coding_seed.save
+
+music_file = URI.open("https://i.pinimg.com/564x/bd/c0/70/bdc070b00b55ff63e2adde80ebcbea95.jpg")
+music_seed = Group.new(
+  title: "Just music",
+  description: Faker::Lorem.sentence(word_count: 15),
+  user: [someone, sometwo].sample,
+  city: [casablanca, essaouira, marrakech].sample,
+  category: music
+)
+music_seed.photo.attach(io: music_file, filename: "music.jpg", content_type: "image/jpg")
+music_seed.save
+
+skating_file = URI.open("https://i.pinimg.com/564x/98/9e/3a/989e3a460385b99d4a4e6a33dab44c6b.jpg")
+skating_seed = Group.new(
+  title: "Skating newbies",
+  description: Faker::Lorem.sentence(word_count: 15),
+  user: [someone, sometwo].sample,
+  city: [casablanca, essaouira, marrakech].sample,
+  category: skate
+)
+skating_seed.photo.attach(io: skating_file, filename: "skating.jpg", content_type: "image/jpg")
+skating_seed.save
 
 thisisatest = UserGroup.create!(
   user: sometwo,
