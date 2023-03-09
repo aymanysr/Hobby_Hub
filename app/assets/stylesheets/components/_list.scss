@@ -48,7 +48,7 @@ form[data-search-groups-target="form"] {
     flex-direction: row;
     align-items: center;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 25px 0px 25px 25px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 0.5rem;
     overflow: hidden;
@@ -62,6 +62,7 @@ form[data-search-groups-target="form"] {
         height: auto;
         object-fit: cover;
         object-position: center;
+        border-radius: 0px 75px 75px 0;
       }
     }
 

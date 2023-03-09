@@ -1,35 +1,37 @@
 
 <div class="container">
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-2">
       <!-- Side panel for categories and cities -->
-      <div class="card mb-4">
-        <div class="card-body">
-          <h5 class="card-title">Filter by</h5>
-          <%= form_tag groups_path, method: :get do %>
-            <div class="form-group">
-              <label>City:</label>
-              <% City.all.each do |city| %>
-                <div class="form-check">
-                  <%= check_box_tag "city_ids[]", city.id, params[:city_ids]&.include?(city.id), class: "form-check-input", data: { "search-groups-action": "change->search-groups#update" } %>
-                  <%= label_tag "city_ids_#{city.id}", city.name, class: "form-check-label" %>
-                </div>
-              <% end %>
-            </div>
-            <div class="form-group">
-              <label>Category:</label>
-              <% Category.all.each do |category| %>
-                <div class="form-check">
-                  <%= check_box_tag "category_ids[]", category.id, params[:category_ids]&.include?(category.id), class: "form-check-input", data: { "search-groups-action": "change->search-groups#update" } %>
-                  <%= label_tag "category_ids_#{category.id}", category.name, class: "form-check-label" %>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
+      <div class="filter-card">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Filter by</h5>
+            <%= form_tag groups_path, method: :get do %>
+              <div class="form-group">
+                <label>City:</label>
+                <% City.all.each do |city| %>
+                  <div class="form-check">
+                    <%= check_box_tag "city_ids[]", city.id, params[:city_ids]&.include?(city.id), class: "form-check-input", data: { "search-groups-action": "change->search-groups#update" } %>
+                    <%= label_tag "city_ids_#{city.id}", city.name, class: "form-check-label" %>
+                  </div>
+                <% end %>
+              </div>
+              <div class="form-group">
+                <label>Category:</label>
+                <% Category.all.each do |category| %>
+                  <div class="form-check">
+                    <%= check_box_tag "category_ids[]", category.id, params[:category_ids]&.include?(category.id), class: "form-check-input", data: { "search-groups-action": "change->search-groups#update" } %>
+                    <%= label_tag "category_ids_#{category.id}", category.name, class: "form-check-label" %>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-10">
       <!-- Search bar and search results -->
   <div data-controller="search-groups">
     <%= form_with url: groups_path, method: :get, html: {class: "mb-4", data: {search_groups_target: "form"}} do |f| %>
