@@ -256,7 +256,7 @@ tr td{
     top: 10px;
 
     overflow: hidden;
-    border: solid 5px #ff4b01;
+    border: solid 5px #faf6f5;
   }
   #carousel figure:nth-child(1){transform: rotateY(0deg) translateZ(288px);}
   #carousel figure:nth-child(2) { transform: rotateY(40deg) translateZ(288px);}
@@ -269,6 +269,7 @@ tr td{
   #carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
 
   img{
+    -webkit-filter: grayscale(1);
     cursor: pointer;
     transition: all .5s ease;
   }
