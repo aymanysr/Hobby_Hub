@@ -3,13 +3,14 @@
     background-size: cover;
     background-position: center;
     padding: 150px 0;
+
   }
   span{
-    color: orange;
+    color: #ff4b01;
   }
   .container-tr h1 {
     margin: 0;
-    color: white;
+    color: rgb(0, 0, 0);
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-size: 32px;
     font-weight: bold;
@@ -17,7 +18,7 @@
 
   .container-tr p {
     font-size: 20px;
-  color: white;
+  color: rgb(0, 0, 0);
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   margin-left: 27px;

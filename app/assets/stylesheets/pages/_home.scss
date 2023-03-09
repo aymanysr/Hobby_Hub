@@ -7,6 +7,7 @@
     padding: 30px;
     color: #333;
     text-shadow: 2px 2px 4px #999;
+    margin: 10px;
 
   }
 
@@ -28,7 +29,7 @@
 
 }
 .we{
-  background-color: #ff4b01;
+  background-color: #f8f8f8;
 
 }
 
@@ -42,26 +43,28 @@
 
 .we h1{
   text-align: center;
-  margin: 40px auto 120px;
-  color: white;
+
+  color: #ff4b01;
 }
 .we p{
   color: #333;
 
 }
+
 .main{
-  width: 50%;
+  width: 80%;
   min-height: 380px;
   text-align: center;
   position: relative;
   cursor: pointer;
+  margin-bottom: 80px;
+  margin-left: 30px;
 
 }
 .rowbene{
   display: flex;
   justify-content: center;
-  margin-left: 160px;
-  margin-top: 80px;
+
 }
 .service h4{
   color: #333;
@@ -107,7 +110,7 @@
   border-radius: 50%;
   margin: -90px auto 0;
   background: #fff;
-  border: 18px solid #ff4b01;
+  border: 18px solid #f8f8f8;
 
 }
 .service-logo img{
@@ -193,9 +196,92 @@
     border-radius: 25px;
     font-weight: 500;
     text-shadow: 0 2px 2px rgba(0,0,0,0.25);
-    
+
 
     width: 196px;
   }
 
+}
+.container-ris{
+
+  width: 80%;
+  margin: 50px auto;
+}
+.conatct-box{
+   background-color: #e7e7e7;
+  display: flex;
+}
+.contact-left{
+  flex-basis: 60%;
+  padding: 40px 60px;
+}
+.contact-right{
+  flex-basis: 40%;
+  padding: 40px ;
+  background: #ff4b01;
+  color: #fff;
+
+}
+tr td:first-child{
+  padding-right: 20px;
+}
+tr td{
+  padding-top: 20px;
+}
+
+#my-carousel{
+  &.container-oo{
+    margin: 4% auto;
+    width: 210px;
+    height: 140px;
+    position: relative;
+    perspective: 1000px;
+  }
+  #carousel{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotation 20s infinite linear;
+  }
+  #carousel:hover{
+    animation-play-state: paused;
+  }
+  #carousel figure{
+    display: block;
+    position: absolute;
+    width: 186px;
+    height: 116px;
+    left: 10px;
+    top: 10px;
+
+    overflow: hidden;
+    border: solid 5px #ff4b01;
+  }
+  #carousel figure:nth-child(1){transform: rotateY(0deg) translateZ(288px);}
+  #carousel figure:nth-child(2) { transform: rotateY(40deg) translateZ(288px);}
+  #carousel figure:nth-child(3) { transform: rotateY(80deg) translateZ(288px);}
+  #carousel figure:nth-child(4) { transform: rotateY(120deg) translateZ(288px);}
+  #carousel figure:nth-child(5) { transform: rotateY(160deg) translateZ(288px);}
+  #carousel figure:nth-child(6) { transform: rotateY(200deg) translateZ(288px);}
+  #carousel figure:nth-child(7) { transform: rotateY(240deg) translateZ(288px);}
+  #carousel figure:nth-child(8) { transform: rotateY(280deg) translateZ(288px);}
+  #carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
+
+  img{
+    cursor: pointer;
+    transition: all .5s ease;
+  }
+  img:hover{
+    transform: scale(1.2,1.2);
+  }
+
+  @keyframes rotation{
+    from{
+      transform: rotateY(0deg);
+    }
+    to{
+      transform: rotateY(360deg);
+    }
+  }
 }
