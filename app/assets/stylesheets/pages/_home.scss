@@ -10,6 +10,7 @@
 
   }
 
+
   hr{
     color: #333;
   }
@@ -26,13 +27,103 @@
   }
 
 }
+.we{
+  background-color: #ff4b01;
+
+}
+
+
+.main:hover .service{
+  transform: translateY(-50px);
+}
+.main:hover img{
+  transform: rotate(360deg);
+}
+
+.we h1{
+  text-align: center;
+  margin: 40px auto 120px;
+  color: white;
+}
+.we p{
+  color: #333;
+
+}
+.main{
+  width: 50%;
+  min-height: 380px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+
+}
+.rowbene{
+  display: flex;
+  justify-content: center;
+  margin-left: 160px;
+  margin-top: 80px;
+}
+.service h4{
+  color: #333;
+  height: 35px;
+  width: 80%;
+  background: #fff;
+  margin: 50px auto;
+  position: relative;
+}
+.service h4::after{
+  content: '';
+  width: 20px;
+  height: 30px;
+  background: linear-gradient(to right, #fff,#ec9d7f);
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  z-index: -1;
+}
+.service h4::before{
+  content: '';
+  width: 20px;
+  height: 30px;
+  background: linear-gradient(to right, #fff,#ff4b01);
+  position: absolute;
+  left: -5px;
+  bottom: -5px;
+  z-index: -1;
+}
+.service{
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+
+}
+
+.service-logo{
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin: -90px auto 0;
+  background: #fff;
+  border: 18px solid #ff4b01;
+
+}
+.service-logo img{
+  width: 50px;
+  margin-top: 20px;
+  transition: transform 1s;
+}
 #dd{
+
   margin: 0 16px 0 16px;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppings', sans-serif;
   display: flex;
   justify-content: center;
+
   .container-k{
     position: relative;
     display: flex;
@@ -79,7 +170,7 @@
     left: 83px;
     width: 35px;
     height: 35px;
-  
+
     border-radius: 50px;
     opacity: 0.9;
   }
@@ -102,8 +193,8 @@
     border-radius: 25px;
     font-weight: 500;
     text-shadow: 0 2px 2px rgba(0,0,0,0.25);
-    opacity: 0.75;
-    transition: 0.5;
+    
+
     width: 196px;
   }
 
