@@ -9,23 +9,78 @@
     <div class ="group-content">
 
         <div class ="iconss">
-            <span class="icon"><i class="fa-regular fa-calendar"></i> <%= Date.tomorrow %></span>
+            <span class="icon"><i class="fa-regular fa-calendar"></i> Since <%= Date.tomorrow %></span>
             <span class="icon"><i class="fa-regular fa-message"></i> <%= rand(20..50)%></span>
-            <span class="icon"><i class="fa-solid fa-location-dot"></i> <%= @group.city.name  %><span>
+            <span class="icon"><i class="fa-solid fa-location-dot"></i> <%= @group.city.name  %></span>
         </div>
 
         <h2 class="title"><i class="fas fa-thumbs-up"></i> <%= @group.title  %></h2>
 
-        <p class="description"><%= @group.description %></p>
+        <p><i class="fa-solid fa-quote-right"></i><%= @group.category.name%></p>
+        <p>Public</p>
 
-        <div class="buttonn">
+        <div class="bottom-group-card">
+
             <a href="" class="bttnn">Join Group</a>
+
+            <button class="share-btn"><i class="fa-solid fa-share-nodes"></i></button>
+
         </div>
 
     </div>
+
   </div>
 
   <div class="avatar-members">
+
+    <div class="about-card">
+
+      <ul class="list-inline tabs-underlined">
+        <li>
+          <a href="#" class="tab-underlined active" data-tab="about">About the group</a>
+        </li>
+        <li>
+          <a href="#" class="tab-underlined" data-tab="events">Events</a>
+        </li>
+        <li>
+          <a href="#" class="tab-underlined" data-tab="discussions">Discussions</a>
+        </li>
+        <li>
+          <a href="#" class="tab-underlined" data-tab="plus">Plus</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+
+        <div id="about" class="tab-pane active">This is the about tab content.</div>
+        <div id="events" class="tab-pane">This is the events tab content.</div>
+        <div id="discussions" class="tab-pane">This is the discussions tab content.</div>
+        <div id="plus" class="tab-pane">This is the plus tab content.</div>
+
+      </div>
+
+    </div>
+
+    <script>
+      const tabLinks = document.querySelectorAll('.tab-underlined');
+      const tabContents = document.querySelectorAll('.tab-pane');
+
+      tabLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const selected = link.dataset.tab;
+          tabLinks.forEach((link) => {
+            link.classList.remove('active');
+          });
+          tabContents.forEach((tab) => {
+            tab.classList.remove('active');
+          });
+          link.classList.add('active');
+          document.getElementById(selected).classList.add('active');
+        });
+      });
+    </script>
+
 
       <div class="avatar-group-card">
 
@@ -61,24 +116,6 @@
 
       </div>
 
-    <div class="about-card">
-
-      <ul class="list-inline tabs-underlined">
-        <li>
-          <a href="#" class="tab-underlined active">About the group</a>
-        </li>
-        <li>
-          <a href="#" class="tab-underlined">Events</a>
-        </li>
-        <li>
-          <a href="#" class="tab-underlined">Discussions</a>
-        </li>
-        <li>
-          <a href="#" class="tab-underlined">Plus</a>
-        </li>
-      </ul>
-
-      </div>
 
   </div>
 
