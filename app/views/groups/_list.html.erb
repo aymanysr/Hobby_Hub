@@ -7,10 +7,10 @@
           <%= cl_image_tag group.photo.key, width: 150, height: 150, crop: :thumb %>
         </div>
         <div class="card-title">
-          <h3><%= group.title %></h3>
-          <p><strong>Description</strong><%= group.description %></p>
-          <p><strong>Category:</strong> <%= group.category_name %></p>
-          <p><strong>City:</strong> <%= group.city_name %></p>
+          <h3><strong><%= group.title %></strong></h3>
+          <p><strong>Description: </strong><%= group.description %></p>
+          <p><strong>Category: </strong> <%= group.category_name %></p>
+          <p><strong>City: </strong> <%= group.city_name %></p>
           <%= link_to "Join", group_path(group), class: "join-btn" %>
         </div>
       </div>

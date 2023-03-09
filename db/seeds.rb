@@ -40,7 +40,8 @@ coding = Category.create!(
   name: "Coding"
 )
 
-someone = User.create!(
+pfp = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678376225/de7834s-6515bd40-8b2c-4dc6-a843-5ac1a95a8b55_bfthzu.jpg")
+someone = User.new(
   nickname: "someone",
   first_name: "some",
   last_name: "one",
@@ -48,8 +49,10 @@ someone = User.create!(
   bio: "I am someone",
   gender: "Some gender",
   birthdate: Time.now,
-  password: "111111"
+  password: "111111",
 )
+someone.avatar.attach(io: pfp, filename:"pfp.jpg", content_type: "image/jpg")
+someone.save
 
 sometwo = User.create!(
   nickname: "sometwo",
