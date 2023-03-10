@@ -78,7 +78,7 @@
   content: '';
   width: 20px;
   height: 30px;
-  background: linear-gradient(to right, #fff,#ec9d7f);
+  background: linear-gradient(to right, #fff,#ff4b01);
   position: absolute;
   right: -5px;
   top: -5px;
@@ -208,7 +208,7 @@
   margin: 50px auto;
 }
 .conatct-box{
-   background-color: #e7e7e7;
+   background-color: #f3f3f3;
   display: flex;
 }
 .contact-left{
@@ -256,7 +256,7 @@ tr td{
     top: 10px;
 
     overflow: hidden;
-    border: solid 5px #ff4b01;
+    border: solid 5px #faf6f5;
   }
   #carousel figure:nth-child(1){transform: rotateY(0deg) translateZ(288px);}
   #carousel figure:nth-child(2) { transform: rotateY(40deg) translateZ(288px);}
@@ -269,6 +269,7 @@ tr td{
   #carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
 
   img{
+    -webkit-filter: grayscale(1);
     cursor: pointer;
     transition: all .5s ease;
   }
