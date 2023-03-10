@@ -13,6 +13,10 @@ class GroupsController < ApplicationController
     end
   end
 
+  def filter
+    @groups = Group.joins(:category, :city).where(city_id: params[:city_ids])
+  end
+
   def show
     @group = Group.find(params[:id])
   end
