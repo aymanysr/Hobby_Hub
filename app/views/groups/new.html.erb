@@ -1,39 +1,49 @@
-<h1>New Group</h1>
+<div id="new-group">
+  <div class="background-waves">
+    <div class="new-group-card-container">
+      <div class="box">
+        <div class="form">
+          <h1>New Group</h1>
 
-<%= form_with model: @group, url: groups_path do |form| %>
-  <% if @group.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+          <%= form_with model: @group, url: groups_path do |form| %>
+            <% if @group.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
 
-      <ul>
-      <% @group.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+                <ul>
+                <% @group.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class="form-group">
+              <%= form.label :title %>
+              <%= form.text_field :title, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= form.label :description %>
+              <%= form.text_area :description, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= form.label :category_id %>
+              <%= form.collection_select :category_id, Category.all, :id, :name, { prompt: "Select a category" }, { class: "form-control" } %>
+            </div>
+
+            <div class="form-group">
+              <%= form.label :city_id %>
+              <%= form.collection_select :city_id, City.all, :id, :name, { prompt: "Select a city" }, { class: "form-control" } %>
+            </div>
+
+            <div class="form-actions">
+                <%= form.submit "Create Group", { class: "submitButton btn" } %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="form-group">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: "form-control" %>
   </div>
-
-  <div class="form-group">
-    <%= form.label :description %>
-    <%= form.text_area :description, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :category_id %>
-    <%= form.collection_select :category_id, Category.all, :id, :name, { prompt: "Select a category" }, { class: "form-control" } %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :city_id %>
-    <%= form.collection_select :city_id, City.all, :id, :name, { prompt: "Select a city" }, { class: "form-control" } %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Create Group", class: "btn btn-primary" %>
-  </div>
-<% end %>
+</div>
