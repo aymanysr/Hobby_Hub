@@ -8,20 +8,17 @@
           <h2>Log in</h2>
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
           <div class="form-inputs">
-            <i class="fa-solid fa-user"></i>
             <%= f.input :email,
                         required: false,
                         autofocus: true,
                         input_html: { autocomplete: "email" } %>
           </div>
           <div class="form-inputs">
-            <i class="fa-solid fa-lock"></i>
             <%= f.input :password,
                         required: false,
                         input_html: { autocomplete: "current-password" } %>
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
           </div>
-
           <div class="form-actions">
             <span class="submitButton btn">
               <%= f.button :submit, "Log in" %>
