@@ -228,7 +228,14 @@ tr td:first-child{
 tr td{
   padding-top: 20px;
 }
-
+.container-ris h2{
+  font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    
+    color: #333;
+    text-shadow: 2px 2px 4px #999;
+}
 #my-carousel{
   &.container-oo{
     margin: 4% auto;
@@ -284,5 +291,16 @@ tr td{
     to{
       transform: rotateY(360deg);
     }
+  }
+  .my-carousel{
+  margin: 20px !important;
+  }
+  .founds{
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    text-shadow: 2px 2px 4px #999;
   }
 }
