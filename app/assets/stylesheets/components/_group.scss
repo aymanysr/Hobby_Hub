@@ -7,8 +7,10 @@
   @media screen and (min-width: 900px){
     .group-card {
       display: flex;
-      height: 35rem;
+      height: 17rem;
       overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.16);
     }
 
     .group-image {
@@ -18,9 +20,7 @@
     }
     .group-content {
       flex: 2;
-      display: flex;
       flex-direction: column;
-      justify-content: center;
     }
   }
 
@@ -36,24 +36,23 @@
 
   .group-card {
     background-color: white;
-    box-shadow: 0 0 2.5rem #ff4b01;
     border-radius: 10px;
   }
 
   .group-image {
-    height: 35rem;
+    height: 40rem;
     overflow: hidden;
   }
 
   .group-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 43%;
   }
 
   .group-content {
-    padding: 2rem;
+    padding: 1rem;
   }
 
   .iconss {
@@ -65,26 +64,48 @@
     margin-right: 0.4rem;
   }
 
-  .buttonn {
+  .bottom-group-card {
     margin-top: 2rem;
     display: flex;
-    align-items: end;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .bttnn {
-    padding: 1.6rem 4rem;
+    padding: 0.5rem 1rem;
     display: inline-block;
-    background-color: #faa000;
-    border-radius: 0.6rem;
+    background-color: #ff4014;
+    border-radius: 5px;
     color: var(--off-white);
     text-decoration: none;
     cursor: pointer;
+    &:hover {
+      background-color: #faa000;
+    }
+    color: white;
   }
 
   .bttnn:hover {
-    box-shadow: 1px 1px 10px
+    box-shadow: 1px 1px 10px;
   }
 
+  .share-btn {
+    width: 2.5rem;
+    height: 2.55rem;
+    border: 0.1rem solid #ff4014;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    color: #ff4014;
+    outline: none;
+
+    transition: all 0.3s ease-in-out;
+  }
+
+  .share-btn:focus {
+    background-color: #ff4014;
+    color: white;
+  }
   /* Avatar */
 
   @media screen and (min-width: 900px){
@@ -92,6 +113,7 @@
       display: flex;
       height: 35rem;
       overflow: hidden;
+      box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.16);
     }
 
     .avatar-group {
@@ -105,14 +127,13 @@
 
   .avatar-group-card {
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     max-width: 330px;
+    margin-left: 20px;
     height: 455px;
-    margin-top: 15px;
-    box-shadow: 0 0 2.5rem #ff4b01;
+    margin-top: 1px;
     justify-content: flex-end;
+    border-radius: 10px;
   }
 
  .avatar-group {
@@ -172,6 +193,7 @@
     border: .5rem solid;
     border-color: rgba(0, 0, 0, .7) transparent transparent;
   }
+
   .avatar:hover .avatar-name {
   opacity: 1;
   visibility: visible;
@@ -192,4 +214,60 @@
     cursor: pointer;
     color: #999;
   }
+
+  // avatar-members
+    .avatar-members {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+  // about_card
+
+  .about-card {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.16);
+    padding: 20px;
+    height: 455px;
+  }
+
+  .tabs-underlined {
+    list-style: none;
+    margin: 33px 12px 26px 38px;
+  }
+
+  .tabs-underlined li {
+    display: inline-block;
+    margin-right: 8px;
+  }
+
+  .tab-underlined {
+    border-bottom: 2px solid transparent;
+    color: #666;
+    padding: 10px 15px;
+    text-decoration: none;
+  }
+
+  .tab-underlined:hover,
+  .tab-underlined.active {
+    color: #007bff;
+  }
+
+  .tab-content {
+    margin-top: 20px;
+    margin-left: 50px;
+  }
+
+  .tab-pane {
+    display: none;
+  }
+
+  .tab-pane.active {
+    display: block;
+  }
+
 }
