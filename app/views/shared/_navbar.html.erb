@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
 
@@ -12,10 +12,10 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li id="" class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link nav-btn" %>
+            <%= link_to "Home", root_path, class: "nav-link nav-btn" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link nav-btn" %>
+            <%= link_to "create group", new_group_path, class: "nav-link nav-btn" %>
           </li>
           <li class="nav-item dropdown">
               <% if current_user.avatar.attached? %>
@@ -23,8 +23,8 @@
                 <% else cl_image_tag("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678376225/de7834s-6515bd40-8b2c-4dc6-a843-5ac1a95a8b55_bfthzu.jpg")%>
               <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Create group", new_group_path, class: "dropdown-item" %>
+              <%= link_to "Group list", groups_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
