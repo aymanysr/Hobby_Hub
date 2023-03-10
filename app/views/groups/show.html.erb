@@ -9,15 +9,15 @@
     <div class ="group-content">
 
         <div class ="iconss">
-            <span class="icon"><i class="fa-regular fa-calendar"></i> Since <%= Date.tomorrow %></span>
-            <span class="icon"><i class="fa-regular fa-message"></i> <%= rand(20..50)%></span>
+
+            <span class="icon"><i class="fa-regular fa-message"></i> +<%= rand(20..50)%> Recent posts</span>
             <span class="icon"><i class="fa-solid fa-location-dot"></i> <%= @group.city.name  %></span>
         </div>
 
         <h2 class="title"><i class="fas fa-thumbs-up"></i> <%= @group.title  %></h2>
 
         <p><i class="fa-solid fa-quote-right"></i><%= @group.category.name%></p>
-        <p>Public</p>
+        <p><em>Public</em></p>
 
         <div class="bottom-group-card">
 
@@ -52,7 +52,7 @@
 
       <div class="tab-content">
 
-        <div id="about" class="tab-pane active">This is the about tab content.</div>
+        <div id="about" class="tab-pane active"><%= @group.description %></div>
         <div id="events" class="tab-pane">This is the events tab content.</div>
         <div id="discussions" class="tab-pane">This is the discussions tab content.</div>
         <div id="plus" class="tab-pane">This is the plus tab content.</div>
