@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   # resources :groups, only: [:index, :show, :create, :new]
   resources :groups
+  get "groups_filter", to: "groups#filter"
 end

@@ -1,31 +1,125 @@
-<div id="group-show" class="card">
-  <div class="group-content">
+<div id="group-show" class="container">
 
-    <div class="parent">
-      <div class="div1">
-        <div class="group-image ">
-          <img class="rounded" alt="Default img" src="https://images.unsplash.com/photo-1434993568367-36f24aa04d2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
+  <div class="group-card">
+
+    <div class="group-image">
+      <img alt="Default img" src="https://images.unsplash.com/photo-1434993568367-36f24aa04d2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
+    </div>
+
+    <div class ="group-content">
+
+        <div class ="iconss">
+            <span class="icon"><i class="fa-regular fa-calendar"></i> Since <%= Date.tomorrow %></span>
+            <span class="icon"><i class="fa-regular fa-message"></i> <%= rand(20..50)%></span>
+            <span class="icon"><i class="fa-solid fa-location-dot"></i> <%= @group.city.name  %></span>
         </div>
-      </div>
-      <div class="div2">
-        <h2><i class="fas fa-thumbs-up"></i> <%= @group.title  %>
-        </h2>
-      </div>
-      <div class="div3">
-        <p>
-          <i class="fa-solid fa-location-dot"></i>
-          <%= @group.city.name  %>
-        </p>
-      </div>
-      <div class="div4">
-        <p><%= @group.description  %></p>
-      </div>
 
-      <div class="div5">
-        <small class="cardd-members"><%= "99 members" %></small>
-        <button type="button" class="bttn bttn-danger -small card-bttn">Join Group</button>
-      </div>
+        <h2 class="title"><i class="fas fa-thumbs-up"></i> <%= @group.title  %></h2>
+
+        <p><i class="fa-solid fa-quote-right"></i><%= @group.category.name%></p>
+        <p>Public</p>
+
+        <div class="bottom-group-card">
+
+            <a href="" class="bttnn">Join Group</a>
+
+            <button class="share-btn"><i class="fa-solid fa-share-nodes"></i></button>
+
+        </div>
+
     </div>
 
   </div>
+
+  <div class="avatar-members">
+
+    <div class="about-card">
+
+      <ul class="list-inline tabs-underlined">
+        <li>
+          <a href="#" class="tab-underlined active" data-tab="about">About the group</a>
+        </li>
+        <li>
+          <a href="#" class="tab-underlined" data-tab="events">Events</a>
+        </li>
+        <li>
+          <a href="#" class="tab-underlined" data-tab="discussions">Discussions</a>
+        </li>
+        <li>
+          <a href="#" class="tab-underlined" data-tab="plus">Plus</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+
+        <div id="about" class="tab-pane active">This is the about tab content.</div>
+        <div id="events" class="tab-pane">This is the events tab content.</div>
+        <div id="discussions" class="tab-pane">This is the discussions tab content.</div>
+        <div id="plus" class="tab-pane">This is the plus tab content.</div>
+
+      </div>
+
+    </div>
+
+    <script>
+      const tabLinks = document.querySelectorAll('.tab-underlined');
+      const tabContents = document.querySelectorAll('.tab-pane');
+
+      tabLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const selected = link.dataset.tab;
+          tabLinks.forEach((link) => {
+            link.classList.remove('active');
+          });
+          tabContents.forEach((tab) => {
+            tab.classList.remove('active');
+          });
+          link.classList.add('active');
+          document.getElementById(selected).classList.add('active');
+        });
+      });
+    </script>
+
+
+      <div class="avatar-group-card">
+
+        <h2 class="avatar-card-title">Members</h2>
+
+          <div class="avatar-group">
+
+            <div class="avatar">
+              <img src="https://i.pinimg.com/236x/a3/ac/1e/a3ac1ed5abaedffd9947face7901e14c.jpg" alt="Image">
+              <span class="avatar-name">Someone</span>
+            </div>
+
+            <div class="avatar">
+              <img src="https://www.sylvain-renard.com/wp-content/uploads/2017/05/SR20160129-623.jpg" alt="Image">
+              <span class="avatar-name">Sometwo</span>
+            </div>
+
+            <div class="avatar">
+              <img src="https://images.unsplash.com/photo-1606122017369-d782bbb78f32?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydHJhaXRzfGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="Image">
+              <span class="avatar-name">Sometree</span>
+            </div>
+
+            <div class="avatar">
+              <img src="https://img.freepik.com/photos-gratuite/jeune-femme-reveuse-lunettes-soleil-avant_197531-16739.jpg" alt="Image">
+              <span class="avatar-name">Somrfour</span>
+            </div>
+
+          </div>
+
+          <div class="avatar-btn">
+              <small class="cardd-members"> <a href="" class="btn"> +99 members... See All!</a></small>
+          </div>
+
+      </div>
+
+
+  </div>
+
+
+
+
 </div>
