@@ -24,9 +24,9 @@
     }
   }
 
-  h2 {
-    margin-top: 15px;
-    padding-top: 20px;
+  h3 {
+    margin-top: 30px;
+    padding-top: 29px;
   }
 
   .container {
@@ -71,24 +71,6 @@
     align-items: center;
   }
 
-  .bttnn {
-    padding: 0.5rem 1rem;
-    display: inline-block;
-    background-color: #ff4014;
-    border-radius: 5px;
-    color: var(--off-white);
-    text-decoration: none;
-    cursor: pointer;
-    &:hover {
-      background-color: #faa000;
-    }
-    color: white;
-  }
-
-  .bttnn:hover {
-    box-shadow: 1px 1px 10px;
-  }
-
   .share-btn {
     width: 2.5rem;
     height: 2.55rem;
@@ -122,13 +104,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
+    padding-top: 20px;
+    margin-right: 55px
+    }
   }
 
   .avatar-group-card {
-
+    position: relative;
     padding: 20px;
-    max-width: 330px;
+    max-width: 265px;
     margin-left: 20px;
     height: 455px;
     margin-top: 1px;
@@ -137,23 +121,16 @@
     background-color:#87949933;
   }
 
- .avatar-group {
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
- }
-
  .avatar-card-title {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   margin-bottom: 20px;
+  margin-right: -80px;
   }
   .avatar {
     display: flex;
     flex-direction: column;
     align-items: baseline;
-    transform: .2s;
   }
   .avatar img {
     float: left;
@@ -172,14 +149,14 @@
     margin-top: 8px;
     bottom: calc(100% + .5rem);
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(86%);
     padding: .5rem .75rem;
     border-radius: .25rem;
-    background-color: rgba(0, 0, 0, .7);
+    // background-color: rgba(0, 0, 0, .7);
     color: #060606;
     font-size: .875rem;
     white-space: nowrap;
-    opacity: 0;
+    // opacity: 0;
   }
 
   .avatar-btn {
@@ -206,6 +183,38 @@
       flex-wrap: wrap;
       margin-top: 20px;
     }
+
+    // join button
+
+    .bttnn {
+      color: var(--off-white);
+      width: 100%;
+      padding-bottom: 14px;
+      padding-top: 11px;
+      text-decoration: none;
+      cursor: pointer;
+      &:hover {
+        background-color: #faa000;
+      }
+      color: white;
+    }
+
+    .bttnn:hover {
+      box-shadow: 1px 1px 10px;
+    }
+
+    .join-btn {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ff4014;
+      height: 45px;
+      box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.16);
+
+    }
+
+
 
   // about_card
 

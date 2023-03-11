@@ -20,20 +20,29 @@
             <span class="icon"><i class="fa-regular fa-message"></i> +<%= rand(20..50)%> Recent posts</span>
         </div>
 
-        <h2 class="title"><i class="fas fa-thumbs-up"></i> <%= @group.title  %></h2>
+        <h2 class="title"><i class="fas fa-thumbs-up"></i> <%= @group.title %></h2>
 
         <p><i class="fa-solid fa-quote-right"></i><%= @group.category.name%></p>
         <p><em>Public</em></p>
 
         <div class="bottom-group-card">
 
-            <a href="" class="bttnn">Join Group</a>
 
-            <button class="share-btn"><i class="fa-solid fa-share-nodes"></i></button>
+            <button class="share-btn" onclick="share()"><i class="fa-solid fa-share-nodes"></i></button>
+
 
         </div>
 
     </div>
+    <script>
+function share() {
+  const url = encodeURIComponent(window.location.href);
+  const text = encodeURIComponent("Check out this cool page!");
+  const twitterUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+  window.open(twitterUrl, "_blank");
+}
+
+    </script>
 
   </div>
 
@@ -99,9 +108,16 @@
     </script>
 
 
+
       <div class="avatar-group-card">
 
-        <h2 class="avatar-card-title">Members</h2>
+          <div class="join-btn">
+
+            <a href="" class="bttnn d-flex justify-content-center">Join Group</a>
+
+          </div>
+
+        <h3 class="avatar-card-title">Members</h3>
 
           <div class="avatar-group">
 
