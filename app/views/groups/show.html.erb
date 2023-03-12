@@ -16,33 +16,65 @@
 
         <div class ="iconss">
 
-            <span class="icon"><i class="fa-solid fa-location-dot"></i> <%= @group.city.name  %></span>
-            <span class="icon"><i class="fa-regular fa-message"></i> +<%= rand(20..50)%> Recent posts</span>
+            <span class="icon"><i id="i-t" class="fa-solid fa-location-dot"></i> <%= @group.city.name  %></span>
+            <span class="icon"><i id="i-t" class="fa-regular fa-message"></i> +<%= rand(20..50)%> Recent posts</span>
         </div>
 
         <h2 class="title"><i class="fas fa-thumbs-up"></i> <%= @group.title %></h2>
 
-        <p><i class="fa-solid fa-quote-right"></i><%= @group.category.name%></p>
+        <p><i id="i-t"  class="fa-solid fa-quote-right"></i><%= @group.category.name%></p>
         <p><em>Public</em></p>
 
-        <div class="bottom-group-card">
+      <div class="wrapper">
 
+        <nav class="menuShare">
+          <input type="checkbox" id="menu-open" class="menu-open" name="menu-open" />
+          <label for="menu-open" class="menu-open-button">
+            <i class="fa fa-share-alt share-icon"></i>
+          </label>
+                <a href="#" class="menu-item facebook_share_btn"
+                  data-open-share="facebook"
+                  data-open-share-link="https://hobby-hub.herokuapp.com/">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="menu-item instagram_plus_share_btn"
+                  data-open-share="instagram"
+                  data-open-share-url="https://hobby-hub.herokuapp.com/">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="menu-item twitter_share_btn"
+                  data-open-share="twitter"
+                  data-open-share-url="https://hobby-hub.herokuapp.com/"
+                  data-open-share-title="Hobby-HoB">
+                  <i class="fab fa-twitter"></i>
+                </a>
+          </nav>
 
-            <button class="share-btn" onclick="share()"><i class="fa-solid fa-share-nodes"></i></button>
+      </div>
 
+        <script>
+            const facebookShareBtn = document.querySelector('.facebook_share_btn');
+            facebookShareBtn.addEventListener('click', () => {
+              const link = facebookShareBtn.getAttribute('data-open-share-link');
+              window.open(`https://www.facebook.com/sharer/sharer.php?u=${link}`);
+            });
 
-        </div>
+            const instagramShareBtn = document.querySelector('.instagram_plus_share_btn');
+            instagramShareBtn.addEventListener('click', () => {
+              const url = instagramShareBtn.getAttribute('data-open-share-url');
+              window.open(`https://www.instagram.com/?url=${url}`);
+            });
 
-    </div>
-    <script>
-function share() {
-  const url = encodeURIComponent(window.location.href);
-  const text = encodeURIComponent("Check out this cool page!");
-  const twitterUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
-  window.open(twitterUrl, "_blank");
-}
+            const twitterShareBtn = document.querySelector('.twitter_share_btn');
+            twitterShareBtn.addEventListener('click', () => {
+              const url = twitterShareBtn.getAttribute('data-open-share-url');
+              const title = twitterShareBtn.getAttribute('data-open-share-title');
+              window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`);
+            });
+        </script>
 
-    </script>
+      </div>
+
 
   </div>
 
@@ -118,6 +150,9 @@ function share() {
           </div>
 
         <h3 class="avatar-card-title">Members</h3>
+
+
+
 
           <div class="avatar-group">
 
