@@ -313,12 +313,9 @@
       cursor: pointer;
       &:hover {
         background-color: #faa000;
+        box-shadow: 0px 3px 6px 3px white;
       }
       color: white;
-    }
-
-    .bttnn:hover {
-      box-shadow: 1px 1px 10px;
     }
 
     .join-btn {
@@ -328,7 +325,7 @@
       width: 100%;
       background-color: #ff4014;
       height: 45px;
-      box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.16);
+      box-shadow: 0px 3px 6px 3px white;
 
     }
 
