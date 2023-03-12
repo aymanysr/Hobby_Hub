@@ -259,7 +259,6 @@ group1 = Group.new(
 )
 
 group1.photo.attach(io: coding_file, filename: "coding1.jpg", content_type: "image/jpg")
-# group1.users << [user1, user2, user3, user4]
 group1.save!
 
 boarding_file = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678461415/boarding1_ubzfww.jpg")

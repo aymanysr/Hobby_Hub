@@ -17,7 +17,6 @@ class GroupsController < ApplicationController
     @groups = Group.joins(:category, :city).where(city_id: params[:city_ids])
   end
 
-
   def new
     @group = Group.new
   end
@@ -34,7 +33,6 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @users = @group.users
   end
 
   def edit

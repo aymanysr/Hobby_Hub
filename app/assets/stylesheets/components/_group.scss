@@ -383,15 +383,16 @@
 
   .tab-content .active {
     background-color: rgba(255, 64, 20,.2);
-    margin-top: 50px;
-    border-radius: 15px;
-    border-radius: 40px 0px;
+    margin-top: 18px;
+    border-top-style: double;
+    border-top-color: #666;
   }
 
   .tab-pane {
     display: none;
     justify-content: center;
-    min-height: 240px;
+    min-height: 310px;
+    border-radius: 0 0 40px;
   }
 
   .tab-pane.active {
