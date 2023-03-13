@@ -11,7 +11,10 @@ class PostsController < ApplicationController
       render :new
     end
   end
-
+  def show
+   @post =Post.find(params[:id])
+   @group = Group.find(@post.group_id)
+  end
   private
 
   def post_params

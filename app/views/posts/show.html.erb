@@ -1,0 +1,31 @@
+
+<div class="container">
+ <div class="row">
+<div class="col-8">
+ <div id="post-show">
+  <p><%= @post.content %></p>
+ </div>
+ </div>
+ <div class="col-4">
+ <div id="group-tv" >
+  
+   <div class ="iconss">
+  <span class="icon"><i id="i-t" class="fa-solid fa-location-dot"></i> <%= @group.city.name  %></span>
+  <span class="icon"><i id="i-t" class="fa-regular fa-message"></i> +<%= rand(20..50)%> Recent posts</span>
+ </div>
+  <h2 class="title"><i class="fas fa-thumbs-up"></i> <%= @group.title %></h2>
+
+        <p><i id="i-t"  class="fa-solid fa-quote-right"></i><%= @group.category.name%></p>
+        <p><em>Public</em></p>
+        <p> <%= @group.description %> </p>
+        <div class="avatar-group-card">
+ </div>
+ </div>
+   </div>
+</div>
+<div id="group-show" class="container">
+
+
+  </div>
+</div>
+

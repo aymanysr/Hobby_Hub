@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :groups do
     post "posts", to: "posts#create"
+    get "posts/:id", to: "posts#show", as: "smya"
   end
   get "groups_filter", to: "groups#filter"
   put "join_group", to: "groups#join"
