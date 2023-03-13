@@ -3,15 +3,21 @@
   <div class="group-card">
 
     <div class="group-image">
-      <img alt="Default img" src="https://images.unsplash.com/photo-1434993568367-36f24aa04d2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
+
+        <% if @group.photo.key.nil? %>
+          <img src="https://images.unsplash.com/photo-1434993568367-36f24aa04d2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=801" alt="default photo">
+        <% else %>
+          <%= cl_image_tag @group.photo.key, crop: :fit %>
+        <% end %>
+
     </div>
 
     <div class ="group-content">
 
         <div class ="iconss">
 
-            <span class="icon"><i class="fa-regular fa-message"></i> +<%= rand(20..50)%> Recent posts</span>
             <span class="icon"><i class="fa-solid fa-location-dot"></i> <%= @group.city.name  %></span>
+            <span class="icon"><i class="fa-regular fa-message"></i> +<%= rand(20..50)%> Recent posts</span>
         </div>
 
         <h2 class="title"><i class="fas fa-thumbs-up"></i> <%= @group.title  %></h2>
