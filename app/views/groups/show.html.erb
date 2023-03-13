@@ -103,12 +103,22 @@
       <div class="tab-content">
 
         <div id="about" class="tab-pane active">
-         <p> <%= @group.description %> </p>
+          <p> <%= @group.description %> </p>
         </div>
         <div id="events" class="tab-pane">
-        <p> This is the events tab content.</p></div>
-        <div id="discussions" class="tab-pane">  <p> This is the discussions tab content.</p></div>
-        <div id="plus" class="tab-pane">  <p> This is the plus tab content.</p></div>
+          <p> This is the events tab content.</p></div>
+        <div id="discussions" class="tab-pane">
+          <%= simple_form_for([@group, @post]) do |f| %>
+          <%= f.input :content %>
+          <%= f.submit %>
+          <% end %>
+          <% @group.posts.each do |post| %>
+          <%= post.content %>
+          <% end %>
+        </div>
+        <div id="plus" class="tab-pane">
+          <p> This is the plus tab content.</p>
+        </div>
 
       </div>
 
@@ -144,9 +154,16 @@
       <div class="avatar-group-card">
 
           <div class="join-btn">
-
-            <a href="" class="bttnn d-flex justify-content-center">Join Group</a>
-
+            <% if UserGroup.pluck(:user_id).include?(current_user.id) %>
+                <form action="/leave_group" method="PUT">
+                <input type="submit" class="bttnn d-flex justify-content-center" value="Leave Group">
+                <input type="hidden" name="group_id" value="<%= @group.id %>">
+              </form>            <% else %>
+              <form action="/join_group" method="PUT">
+                <input type="submit" class="bttnn d-flex justify-content-center" value="Join Group">
+                <input type="hidden" name="group_id" value="<%= @group.id %>">
+              </form>
+            <% end %>
           </div>
 
         <h3 class="avatar-card-title">Members</h3>

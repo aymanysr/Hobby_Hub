@@ -17,6 +17,22 @@ class GroupsController < ApplicationController
     @groups = Group.joins(:category, :city).where(city_id: params[:city_ids])
   end
 
+  def join
+    if UserGroup.create(
+      user: current_user,
+      group_id: params["group_id"]
+    )
+      redirect_to group_path(params["group_id"])
+    end
+  end
+
+  def leave
+    ug = UserGroup.where(user_id: current_user.id, group_id: params["group_id"]).first
+    if ug.destroy
+      redirect_to group_path(params["group_id"])
+    end
+  end
+
   def new
     @group = Group.new
   end
@@ -33,6 +49,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @post = Post.new
   end
 
   def edit
