@@ -1,7 +1,6 @@
-
 #group-show {
-  i {
-    margin: 0 5px;
+  #i-t {
+    margin: 21px 7px;
   }
 
   @media screen and (min-width: 900px){
@@ -19,14 +18,15 @@
 
     }
     .group-content {
+      position: relative;
       flex: 2;
       flex-direction: column;
     }
   }
 
-  h2 {
-    margin-top: 15px;
-    padding-top: 20px;
+  h3 {
+    margin-top: 30px;
+    padding-top: 29px;
   }
 
   .container {
@@ -67,45 +67,145 @@
   .bottom-group-card {
     margin-top: 2rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
   }
 
-  .bttnn {
-    padding: 0.5rem 1rem;
-    display: inline-block;
-    background-color: #ff4014;
-    border-radius: 5px;
-    color: var(--off-white);
-    text-decoration: none;
-    cursor: pointer;
-    &:hover {
-      background-color: #faa000;
-    }
-    color: white;
+  /*social share button*/
+
+  .menu-item,
+  .menu-open-button {
+    background: #EEEEEE;
+    width: 50px;
+    height: 50px;
+    margin-left: -40px;
+    margin-top: 12px;
+    position: absolute;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 53px;
+    transform: translate3d(0, 0, 0);
+    transition: transform ease-out 200ms;
   }
 
-  .bttnn:hover {
-    box-shadow: 1px 1px 10px;
+  .menu-open {
+    display: none;
   }
 
-  .share-btn {
-    width: 2.5rem;
-    height: 2.55rem;
-    border: 0.1rem solid #ff4014;
-    border-radius: 50%;
-    background-color: transparent;
-    cursor: pointer;
-    color: #ff4014;
-    outline: none;
-
-    transition: all 0.3s ease-in-out;
+  .menuShare {
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 26px;
+    z-index: 99;
   }
 
-  .share-btn:focus {
-    background-color: #ff4014;
-    color: white;
+  .menuShare a.menu-item {
+    margin-top: 4px;
   }
+
+  .share-icon {
+    color: #879499;
+  }
+
+  .menu-item:hover {
+    opacity: 1;
+  }
+
+  .menu-item:nth-child(3),
+  .menu-item:nth-child(4),
+  .menu-item:nth-child(5),
+  .menu-item:nth-child(6) {
+    transition-duration: 180ms;
+  }
+
+  .menu-open-button {
+    z-index: 2;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration:400ms;
+  -webkit-transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+  transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+  cursor: pointer;
+  box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+
+}
+
+.menu-open-button:hover {
+  -webkit-transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+  transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+}
+
+.menu-open:checked + .menu-open-button {
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+  -webkit-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+  transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+}
+
+.menu-open:checked ~ .menu-item {
+  -webkit-transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+  transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(3) {
+  transition-duration: 180ms;
+  -webkit-transition-duration: 180ms;
+  -webkit-transform: translate3d(0.08361px, -84.99997px, 0);
+  transform: translate3d(0.08361px, -84.99997px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(4) {
+  transition-duration: 280ms;
+  -webkit-transition-duration: 280ms;
+  -webkit-transform: translate3d(0.08361px, -174.99997px, 0);
+  transform: translate3d(0.08361px, -174.99997px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(5) {
+  transition-duration: 380ms;
+  -webkit-transition-duration: 380ms;
+  -webkit-transform: translate3d(0.08361px, -262.99997px, 0);
+  transform: translate3d(0.08361px, -262.99997px, 0);
+}
+
+.facebook_share_btn {
+  padding-top: 20px;
+  color: #3b5998;
+  background-color: transparent;
+}
+
+.facebook_share_btn:hover {
+  color: #3b5998;
+  text-shadow: none;
+}
+
+.instagram_plus_share_btn {
+  padding-top: 62px;
+  color: #C13584;
+  background-color: transparent;
+}
+
+.instagram_plus_share_btn:hover {
+  color: #C13584;
+  text-shadow: none;
+}
+
+.twitter_share_btn {
+  padding-top: 102px;
+  color: #00aced;
+  background-color: transparent;
+}
+
+.twitter_share_btn:hover {
+  color: #00aced;
+  text-shadow: none;
+}
   /* Avatar */
 
   @media screen and (min-width: 900px){
@@ -122,13 +222,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
+    padding-top: 20px;
+    margin-right: 55px
+    }
   }
 
   .avatar-group-card {
-
+    position: relative;
     padding: 20px;
-    max-width: 330px;
+    max-width: 265px;
     margin-left: 20px;
     height: 455px;
     margin-top: 1px;
@@ -137,23 +239,16 @@
     background-color:#87949933;
   }
 
- .avatar-group {
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
- }
-
  .avatar-card-title {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   margin-bottom: 20px;
+  margin-right: -80px;
   }
   .avatar {
     display: flex;
     flex-direction: column;
     align-items: baseline;
-    transform: .2s;
   }
   .avatar img {
     float: left;
@@ -172,14 +267,14 @@
     margin-top: 8px;
     bottom: calc(100% + .5rem);
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(86%);
     padding: .5rem .75rem;
     border-radius: .25rem;
-    background-color: rgba(0, 0, 0, .7);
+    // background-color: rgba(0, 0, 0, .7);
     color: #060606;
     font-size: .875rem;
     white-space: nowrap;
-    opacity: 0;
+    // opacity: 0;
   }
 
   .avatar-btn {
@@ -205,6 +300,33 @@
       justify-content: space-between;
       flex-wrap: wrap;
       margin-top: 20px;
+    }
+
+    // join button
+
+    .bttnn {
+      color: var(--off-white);
+      width: 100%;
+      padding-bottom: 14px;
+      padding-top: 11px;
+      text-decoration: none;
+      cursor: pointer;
+      &:hover {
+        background-color: #faa000;
+        box-shadow: 0px 3px 6px 3px white;
+      }
+      color: white;
+    }
+
+    .join-btn {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ff4014;
+      height: 45px;
+      box-shadow: 0px 3px 6px 3px white;
+
     }
 
   // about_card
@@ -261,15 +383,16 @@
 
   .tab-content .active {
     background-color: rgba(255, 64, 20,.2);
-    margin-top: 50px;
-    border-radius: 15px;
-    border-radius: 40px 0px;
+    margin-top: 18px;
+    border-top-style: double;
+    border-top-color: #666;
   }
 
   .tab-pane {
     display: none;
     justify-content: center;
-    min-height: 240px;
+    min-height: 310px;
+    border-radius: 0 0 40px;
   }
 
   .tab-pane.active {
