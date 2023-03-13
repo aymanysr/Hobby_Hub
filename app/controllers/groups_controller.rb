@@ -36,6 +36,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    authorize @group
   end
 
   def create
@@ -46,6 +47,7 @@ class GroupsController < ApplicationController
     else
       render :new
     end
+    authorize @group
   end
 
   def show
