@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  skip_after_action :verify_authorized, :verify_policy_scoped
+
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
@@ -9,7 +11,10 @@ class PostsController < ApplicationController
       render :new
     end
   end
-
+  def show
+   @post =Post.find(params[:id])
+   @group = Group.find(@post.group_id)
+  end
   private
 
   def post_params

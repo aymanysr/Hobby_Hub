@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   def index
+    @groups = policy_scope(Group)
     if params[:query].present?
       @groups = Group.joins(:category, :city)
                      .where("title ILIKE :query OR categories.name ILIKE :query OR cities.name ILIKE :query",
@@ -35,6 +36,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    authorize @group
   end
 
   def create
@@ -45,15 +47,18 @@ class GroupsController < ApplicationController
     else
       render :new
     end
+    authorize @group
   end
 
   def show
     @group = Group.find(params[:id])
     @post = Post.new
+    authorize @group
   end
 
   def edit
     @group = Group.find(params[:id])
+    authorize @group
   end
 
   def update
@@ -63,12 +68,14 @@ class GroupsController < ApplicationController
     else
       render :edit
     end
+    authorize @group
   end
 
   def destroy
     @group = Group.find(params[:id])
     @group.destroy
     redirect_to groups_url, notice: 'Group was successfully destroyed.'
+    authorize @group
   end
 
   private

@@ -305,6 +305,16 @@ group5 = Group.new(
 group5.photo.attach(io: cooking_file, filename: "cooking1.jpg", content_type: "image/jpg")
 group5.save
 
+puts "making up posts"
+
+25.times do
+  Post.create!(
+    content: Faker::Lorem.paragraph_by_chars(number: 500),
+    user_id: rand(1..User.count),
+    group_id: rand(1..Group.count)
+  )
+end
+
 # thisisatest = UserGroup.create!(
 #   user: sometwo,
 #   group_id: 1
