@@ -112,8 +112,14 @@
           <%= f.input :content %>
           <%= f.submit %>
           <% end %>
+
           <% @group.posts.each do |post| %>
-          <%= post.content %>
+          <%= link_to group_smya_path(@group, post) do %>
+              <%= post.content %>
+          <% end %>
+
+
+
           <% end %>
         </div>
         <div id="plus" class="tab-pane">
