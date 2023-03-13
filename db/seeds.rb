@@ -257,8 +257,9 @@ group1 = Group.new(
   city: casablanca,
   category: coding
 )
+
 group1.photo.attach(io: coding_file, filename: "coding1.jpg", content_type: "image/jpg")
-group1.save
+group1.save!
 
 boarding_file = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678461415/boarding1_ubzfww.jpg")
 group2 = Group.new(

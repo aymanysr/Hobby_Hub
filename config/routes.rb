@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   # resources :groups, only: [:index, :show, :create, :new]
-  resources :groups
+
+  resources :groups do
+    post "posts", to: "posts#create"
+  end
   get "groups_filter", to: "groups#filter"
+  put "join_group", to: "groups#join"
+  put "leave_group", to: "groups#leave"
 end
