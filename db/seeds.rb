@@ -307,14 +307,173 @@ group5.save
 
 puts "making up posts"
 
-25.times do
-  Post.create!(
-    content: Faker::Lorem.paragraph_by_chars(number: 500),
-    user_id: rand(1..User.count),
-    group_id: rand(1..Group.count)
-  )
-end
+user = User.find(rand(1..User.count))
+Post.create!(
+  content: "Hey everyone,
+  I hope you're all doing well. I just wanted to remind everyone that our next Dev Meetup is coming up soon!
+  This time, we'll be focusing on the latest front-end development trends and techniques.
+  We have a great lineup of speakers who will be sharing their insights and experiences.
+  It's going to be a fantastic opportunity to learn and network with other developers in the community.
+  So mark your calendars and don't miss out! See you all there.
+  Best regards,
+  #{user.nickname}",
+  user_id: user.id,
+  group_id: group1.id
+)
 
+user = User.find(rand(1..User.count))
+Post.create!(
+  content: "Hey everyone,
+  I just wanted to share a new coding challenge that I came across recently.
+  It's a fun little project that involves building a simple game using React.
+  I've been working on it for a few days now and it's been a great way to improve my skills.
+  If anyone is interested, I'd be happy to share the details and maybe we can even work on it together.
+  Let me know what you think!
+  Best,
+  #{user.nickname}",
+  user_id: user.id,
+  group_id: group1.id
+)
+
+user = User.find(rand(1..User.count))
+Post.create!(
+  content: "Hi everyone,
+  I'm excited to announce that I just landed my first job as a software developer!
+  I wanted to share my experience with you all and thank this community for all the support and resources that helped me get here.
+  It was a long and sometimes challenging journey, but it was all worth it in the end.
+  I'm looking forward to this new chapter in my life and can't wait to see what the future holds.
+  If anyone has any advice or words of wisdom to share, I'd love to hear it!
+  Best regards,
+  #{user.nickname}",
+  user_id: user.id,
+  group_id: group1.id
+)
+
+user = User.find(rand(1..User.count))
+Post.create!(
+  content: "Hello everyone,
+  I just wanted to share a new board game that I recently discovered called Azul.
+  It's a tile-laying game that's easy to learn but still offers a good challenge.
+  If anyone is interested, I'd love to bring it to our next meetup and teach it to those who haven't played it before.
+  Let me know if you're interested!
+  Best,
+  #{user.nickname}",
+  user_id: user.id,
+  group_id: group2.id
+)
+
+user = User.find(rand(1..User.count))
+Post.create!(
+  content: "Hey everyone,
+  I wanted to give a shoutout to all the new members who have joined our group recently.
+  Welcome to the Boarding club! We're excited to have you and can't wait to play some games together.
+  If you're looking for recommendations on games to try, feel free to ask.
+  And if anyone has any suggestions for events or meetups, let us know!
+  Best regards,
+  #{user.nickname}",
+  user_id: user.id,
+  group_id: group2.id
+)
+
+user = User.find(rand(1..User.count))
+Post.create!(
+  content: "Hi everyone,
+  I wanted to remind everyone about our upcoming Boarding club meetup this weekend.
+  We'll be meeting at the usual spot at 2 pm and playing some of our favorite games.
+  If you're planning on coming, please let us know so we can get an idea of how many people to expect.
+  And if you have any games you'd like to bring or suggestions for what we should play, feel free to share them.
+  Looking forward to seeing you all there!
+  Best regards,
+  #{user.nickname}",
+  user_id: user.id,
+  group_id: group2.id
+)
+
+image_url = "https://res.cloudinary.com/dlgrirjkk/image/upload/v1678784782/photography_post_vdh06e.jpg"
+image_file = URI.open(image_url)
+user = User.find(rand(1..User.count))
+post = Post.new(
+  content: "Hi everyone,
+  I just wanted to share a photo I took recently while out on a photo walk.
+  It's a shot of the sunset over the ocean, and I'm really happy with how it turned out.
+  I'd love to see some of your photos too, so feel free to share them in the comments.
+  Looking forward to our next meetup!
+  Best,
+  #{user.nickname}",
+  user_id: user.id,
+  group_id: group3.id
+)
+post.photo.attach(io: image_file, filename: "sunset.jpg", content_type: "image/jpg")
+post.save
+
+user = User.find(rand(1..User.count))
+Post.create!(
+  content: "Hello fellow photographers,
+  I wanted to remind everyone about our upcoming workshop on portrait photography.
+  We'll be meeting at the park this Saturday at 10 am and going over some tips and techniques for taking great portraits.
+  If you're interested in attending, please let us know so we can get an idea of how many people to expect.
+  And if you have any questions or suggestions for future workshops, feel free to share them.
+  Best regards,
+  #{user.nickname}",
+  user_id: user.id,
+  group_id: group3.id
+)
+
+user = User.find(rand(1..User.count))
+Post.create!(
+  content: "Hey everyone,
+  I wanted to share a photo challenge with you all.
+  This week's theme is 'reflections', so I challenge you to take a photo that features reflections in some way.
+  It can be anything from a puddle to a mirror to a shiny surface.
+  Feel free to interpret the theme however you'd like.
+  I can't wait to see what you all come up with!
+  Best regards,
+  #{user.nickname}",
+  user_id: user.id,
+  group_id: group3.id
+)
+
+Post.create!(
+  content: "Yesterday's hike with Trailblazers was amazing!
+  We explored the beautiful Rif Mountains and saw stunning views of the surrounding valleys.
+  The trail was challenging but our group was supportive and helped each other through the tougher parts.
+  I can't wait for our next adventure!",
+  user_id: rand(1..User.count),
+  group_id: group4.id
+)
+
+Post.create!(
+  content: "Hey Trailblazers, I'm planning a hike for next weekend and I'd love some company!
+  We'll be exploring the Akchour Waterfalls and it's going to be a moderate level trek.
+  Let me know if you're interested in joining and we'll coordinate logistics!",
+  user_id: rand(1..User.count),
+  group_id: group4.id
+)
+
+Post.create!(
+  content: "I just wanted to share a quick thank you to the Trailblazers community!
+  When I first joined the group, I was nervous about joining hikes because I'm not the most experienced hiker.
+  But everyone has been so welcoming and supportive, and I've learned so much from our group outings.
+  I feel more confident in my abilities now and I'm grateful for the friendships I've made.
+  Here's to more adventures together!",
+  user_id: rand(1..User.count),
+  group_id: group4.id
+)
+
+Post.create!(
+  content: "Hey Tangier Tasters! I just tried the most amazing seafood paella at a local restaurant and I can't stop thinking about it.
+            Who's up for trying it out together this weekend? Let's make it a group outing!",
+  user_id: rand(1...User.count),
+  group_id: group5.id
+)
+
+Post.create!(
+  content: "I've been experimenting with Moroccan cuisine lately and I just made the best tagine I've ever had!
+            I used a mix of spices I bought from the souk and slow-cooked it for hours.
+            If anyone's interested, I'm happy to share the recipe and maybe we can try cooking it together sometime.",
+  user_id: rand(1..User.count),
+  group_id: group5.id
+)
 # thisisatest = UserGroup.create!(
 #   user: sometwo,
 #   group_id: 1
