@@ -5,8 +5,13 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     @post.group_id = params["group_id"]
+    @group = Group.find(params["group_id"])
     if @post.save!
-      redirect_to group_path(@post.group_id), notice: 'Post was successfully created.'
+      respond_to do |format|
+        format.html { redirect_to group_path(@post.group_id), notice: 'Post was successfully created.' }
+        format.text { render partial: "groups/posts", locals: {group: @group}, formats: [:html] }
+      end
+      
     else
       render :new
     end

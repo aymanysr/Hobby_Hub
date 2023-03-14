@@ -10,6 +10,9 @@ application.register("filter", FilterController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import PostController from "./post_controller"
+application.register("post", PostController)
+
 import SearchGroupsController from "./search_groups_controller"
 application.register("search-groups", SearchGroupsController)
 
