@@ -245,7 +245,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
     padding: 20px;
     max-width: 265px;
     margin-left: 20px;
-    height: 455px;
+    height: 646px;
     margin-top: 1px;
     justify-content: flex-end;
     border-radius: 10px;
@@ -376,7 +376,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
 
     .discussion-form input[type="submit"] {
       position: absolute;
-      bottom: -21px;
+      bottom: -26px;
       right: 18px;
       background-color: #ff4014;
       color: #fff;
@@ -392,7 +392,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
 
     #discussions a {
       display: block;
-      margin: 40px 18px 10px 18px;
+      margin: 0 18px 10px 18px;
       color: #333;
       text-decoration: none;
       text-align: justify;
@@ -413,6 +413,13 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
       transition: .3s all ease-in-out;
     }
 
+    .posts-container {
+      height: 300px;
+      overflow-y: scroll;
+      margin-top: 45px;
+    }
+
+
     // show more button
 
     .show-more {
@@ -428,7 +435,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
 
   .about-card {
     flex: 1;
-    height: 455px;
+    height: 646px;
     padding: 20px;
     background-color:#87949933;
     border-radius: 40px 0px;
@@ -486,7 +493,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
   .tab-pane {
     display: none;
     justify-content: center;
-    min-height: 310px;
+    min-height: 498px;
     border-radius: 0 0 40px;
   }
 

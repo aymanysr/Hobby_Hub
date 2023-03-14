@@ -5,9 +5,10 @@
 
       <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle"%>
       <%= current_user.nickname %>
+      <%=  %>
 
     </div>
-    
+
   <div data-controller= "show">
 
     <div class="postt-container" data-show-target="postt" id="post-<%= post.id %>">

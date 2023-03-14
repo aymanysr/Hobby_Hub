@@ -111,7 +111,7 @@
               <input data-action="click->post#post" type="submit" name="commit" value="Create Post" data-disable-with="Create Post">
             <% end %>
 
-            <div data-post-target = 'posts' >
+            <div class="posts-container" style="overflow-y: scroll; height: 300px;">
               <%= render "posts" , group: @group %>
             </div>
          </div>
