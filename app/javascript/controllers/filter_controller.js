@@ -2,16 +2,32 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="filter"
 export default class extends Controller {
+  static targets = ["list"]
   connect() {
-    console.log("hi")
   }
-  update() {
+  update(event) {
     console.log("hi")
-    const url = "/groups_filter?city_ids[]=1&city_ids[]=2"
+    const cities = document.querySelectorAll("input.city")
+    const categories = document.querySelectorAll("input.category")
+    let citiesQuery = "";
+    let catQuery = "";
+
+    cities.forEach(city => {
+      if (city.checked)
+        citiesQuery += "city_ids[]=" + city.value + "&";
+    })
+
+    categories.forEach(cat => {
+      if (cat.checked)
+        catQuery += "category_ids[]=" + cat.value + "&";
+    })
+
+    const url = "/groups_filter?" + citiesQuery + catQuery;
+
     fetch(url, { headers: { "Accept": "text/plain" } })
       .then(response => response.text())
       .then((data) => {
-        console.log(data)
+        console.log("data", data)
         this.listTarget.outerHTML = data
       })
   }
