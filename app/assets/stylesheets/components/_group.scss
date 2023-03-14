@@ -296,6 +296,10 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
     margin-bottom: 10px;
   }
 
+  .post-creator .avatar {
+    margin-right: 10px; /* add some right margin to the avatar */
+  }
+
   .avatar-btn {
     margin-top: 2rem;
     display: flex;
@@ -346,7 +350,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
 
     .post-creator {
       display: flex;
-      justify-content: space-between;
+      align-items: center;
     }
 
 
@@ -400,6 +404,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
       border-radius: 5px;
       padding: 15px;
       background-color:#87949933;
+      box-shadow: 0px 3px 15px -3px grey;
     }
 
     #discussions a:hover {
