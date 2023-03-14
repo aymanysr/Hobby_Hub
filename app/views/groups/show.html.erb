@@ -12,7 +12,7 @@
 
     </div>
 
-   `` <div class ="group-content">
+    <div class ="group-content">
 
         <div class ="iconss">
 
@@ -28,6 +28,7 @@
       <div class="wrapper">
 
         <nav class="menuShare">
+
           <input type="checkbox" id="menu-open" class="menu-open" name="menu-open" />
           <label for="menu-open" class="menu-open-button">
             <i class="fa fa-share-alt share-icon"></i>
@@ -48,40 +49,18 @@
                   data-open-share-title="Hobby-HoB">
                   <i class="fab fa-twitter"></i>
                 </a>
+
           </nav>
 
       </div>
 
-        <script>
-            const facebookShareBtn = document.querySelector('.facebook_share_btn');
-            facebookShareBtn.addEventListener('click', () => {
-              const link = facebookShareBtn.getAttribute('data-open-share-link');
-              window.open(`https://www.facebook.com/sharer/sharer.php?u=${link}`);
-            });
-
-            const instagramShareBtn = document.querySelector('.instagram_plus_share_btn');
-            instagramShareBtn.addEventListener('click', () => {
-              const url = instagramShareBtn.getAttribute('data-open-share-url');
-              window.open(`https://www.instagram.com/?url=${url}`);
-            });
-
-            const twitterShareBtn = document.querySelector('.twitter_share_btn');
-            twitterShareBtn.addEventListener('click', () => {
-              const url = twitterShareBtn.getAttribute('data-open-share-url');
-              const title = twitterShareBtn.getAttribute('data-open-share-title');
-              window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`);
-            });
-        </script>
-
-      </div>
-
+    </div>
 
   </div>
 
   <div class="avatar-members">
 
     <div class="about-card">
-
 
       <ul class="list-inline tabs-underlined">
         <li class="active d-flex justify-content-center align-items-center">
@@ -98,30 +77,25 @@
         </li>
       </ul>
 
-
-
       <div class="tab-content">
 
         <div id="about" class="tab-pane active">
           <p> <%= @group.description %> </p>
         </div>
         <div id="events" class="tab-pane">
-          <p> This is the events tab content.</p></div>
-        <div id="discussions" class="tab-pane">
-          <%= simple_form_for([@group, @post]) do |f| %>
-          <%= f.input :content %>
-          <%= f.submit %>
-          <% end %>
-
-          <% @group.posts.each do |post| %>
-          <%= link_to group_smya_path(@group, post) do %>
-              <%= post.content %>
-          <% end %>
-
-
-
-          <% end %>
+          <p> This is the events tab content.</p>
         </div>
+         <div id="discussions" class="tab-pane">
+            <%= simple_form_for([@group, @post]) do |f| %>
+              <%= f.input :content %>
+              <%= f.submit %>
+            <% end %>
+            <% @group.posts.each do |post| %>
+              <%= link_to group_smya_path(@group, post) do %>
+                  <%= post.content %>
+              <% end %>
+            <% end %>
+         </div>
         <div id="plus" class="tab-pane">
           <p> This is the plus tab content.</p>
         </div>
@@ -130,85 +104,103 @@
 
     </div>
 
-    <script>
-      const tabLi = document.querySelectorAll('.tabs-underlined li');
-      const tabLinks = document.querySelectorAll('.tab-underlined');
-      const tabContents = document.querySelectorAll('.tab-pane');
-
-      tabLinks.forEach((link) => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const selected = link.dataset.tab;
-          tabLi.forEach((link) => {
-            link.classList.remove('active');
-          });
-          tabLinks.forEach((link) => {
-            link.classList.remove('active');
-          });
-          tabContents.forEach((tab) => {
-            tab.classList.remove('active');
-          });
-          link.classList.add('active');
-          link.parentNode.classList.add('active');
-          document.getElementById(selected).classList.add('active');
-        });
-      });
-    </script>
-
-
 
       <div class="avatar-group-card">
 
-          <div class="join-btn">
-            <% if UserGroup.pluck(:user_id).include?(current_user.id) %>
-                <form action="/leave_group" method="PUT">
-                <input type="submit" class="bttnn d-flex justify-content-center" value="Leave Group">
-                <input type="hidden" name="group_id" value="<%= @group.id %>">
-              </form>            <% else %>
-              <form action="/join_group" method="PUT">
-                <input type="submit" class="bttnn d-flex justify-content-center" value="Join Group">
-                <input type="hidden" name="group_id" value="<%= @group.id %>">
-              </form>
-            <% end %>
-          </div>
+        <div class="join-btn">
+          <% if UserGroup.pluck(:user_id).include?(current_user.id) %>
+              <form action="/leave_group" method="PUT">
+              <input type="submit" class="bttnn d-flex justify-content-center" value="Leave Group">
+              <input type="hidden" name="group_id" value="<%= @group.id %>">
+            </form>
+          <% else %>
+            <form action="/join_group" method="PUT">
+              <input type="submit" class="bttnn d-flex justify-content-center" value="Join Group">
+              <input type="hidden" name="group_id" value="<%= @group.id %>">
+            </form>
+          <% end %>
+        </div>
 
         <h3 class="avatar-card-title">Members</h3>
 
-          <div class="avatar-group">
+        <div class="avatar-group">
 
-            <div class="avatar">
-              <img src="https://i.pinimg.com/236x/a3/ac/1e/a3ac1ed5abaedffd9947face7901e14c.jpg" alt="Image">
-              <span class="avatar-name">Someone</span>
-            </div>
-
-            <div class="avatar">
-              <img src="https://www.sylvain-renard.com/wp-content/uploads/2017/05/SR20160129-623.jpg" alt="Image">
-              <span class="avatar-name">Sometwo</span>
-            </div>
-
-            <div class="avatar">
-              <img src="https://images.unsplash.com/photo-1606122017369-d782bbb78f32?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydHJhaXRzfGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="Image">
-              <span class="avatar-name">Sometree</span>
-            </div>
-
-            <div class="avatar">
-              <img src="https://img.freepik.com/photos-gratuite/jeune-femme-reveuse-lunettes-soleil-avant_197531-16739.jpg" alt="Image">
-              <span class="avatar-name">Somefour</span>
-            </div>
-
+          <div class="avatar">
+            <img src="https://i.pinimg.com/236x/a3/ac/1e/a3ac1ed5abaedffd9947face7901e14c.jpg" alt="Image">
+            <span class="avatar-name">Someone</span>
           </div>
 
-
-          <div class="avatar-btn">
-              <small class="cardd-members"> <a href="" class="btn"> +99 members... See All!</a></small>
+          <div class="avatar">
+            <img src="https://www.sylvain-renard.com/wp-content/uploads/2017/05/SR20160129-623.jpg" alt="Image">
+            <span class="avatar-name">Sometwo</span>
           </div>
+
+          <div class="avatar">
+            <img src="https://images.unsplash.com/photo-1606122017369-d782bbb78f32?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydHJhaXRzfGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="Image">
+            <span class="avatar-name">Sometree</span>
+          </div>
+
+          <div class="avatar">
+            <img src="https://img.freepik.com/photos-gratuite/jeune-femme-reveuse-lunettes-soleil-avant_197531-16739.jpg" alt="Image">
+            <span class="avatar-name">Somefour</span>
+          </div>
+
+        </div>
+
+        <div class="avatar-btn">
+            <small class="cardd-members"> <a href="" class="btn"> +99 members... See All!</a></small>
+        </div>
 
       </div>
 
 
   </div>
 
-
-
-
 </div>
+
+
+ <script>
+    const facebookShareBtn = document.querySelector('.facebook_share_btn');
+    facebookShareBtn.addEventListener('click', () => {
+      const link = facebookShareBtn.getAttribute('data-open-share-link');
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${link}`);
+    });
+
+    const instagramShareBtn = document.querySelector('.instagram_plus_share_btn');
+    instagramShareBtn.addEventListener('click', () => {
+      const url = instagramShareBtn.getAttribute('data-open-share-url');
+      window.open(`https://www.instagram.com/?url=${url}`);
+    });
+
+    const twitterShareBtn = document.querySelector('.twitter_share_btn');
+    twitterShareBtn.addEventListener('click', () => {
+      const url = twitterShareBtn.getAttribute('data-open-share-url');
+      const title = twitterShareBtn.getAttribute('data-open-share-title');
+      window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`);
+    });
+</script>
+
+<script>
+  const tabLi = document.querySelectorAll('.tabs-underlined li');
+  const tabLinks = document.querySelectorAll('.tab-underlined');
+  const tabContents = document.querySelectorAll('.tab-pane');
+
+  tabLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const selected = link.dataset.tab;
+      tabLi.forEach((link) => {
+        link.classList.remove('active');
+      });
+      tabLinks.forEach((link) => {
+        link.classList.remove('active');
+      });
+      tabContents.forEach((tab) => {
+        tab.classList.remove('active');
+      });
+      link.classList.add('active');
+      link.parentNode.classList.add('active');
+      document.getElementById(selected).classList.add('active');
+    });
+  });
+</script>
