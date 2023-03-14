@@ -108,7 +108,8 @@
          <div id="discussions" class="tab-pane" data-controller="post">
             <%= simple_form_for([@group, @post], html: { "data-post-target": "form", class: "discussion-form"}) do |f| %>
             <%= f.input :content, input_html: { data: {post_target: "content"}}%>
-              <input data-action="click->post#post" type="submit" name="commit" value="Create Post" data-disable-with="Create Post">
+            <%= f.file_field :photo, class: "form-control" %>
+            <input data-action="click->post#post" type="submit" name="commit" value="Create Post" data-disable-with="Create Post">
             <% end %>
 
           <div class="posts-container">
@@ -119,7 +120,7 @@
 
 
         <div id="plus" class="tab-pane">
-          <p> This is the plus tab content.</p>
+          <p> This is the plus tab plus.</p>
         </div>
 
         <script>
@@ -199,7 +200,6 @@
         </div>
 
       </div>
-
 
   </div>
 
