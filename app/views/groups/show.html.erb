@@ -105,30 +105,15 @@
         <div id="events" class="tab-pane">
           <p> This is the events tab content.</p>
         </div>
-         <div id="discussions" class="tab-pane">
-            <%= simple_form_for([@group, @post], html: {class: "discussion-form"}) do |f| %>
-              <%= f.input :content %>
-              <%= f.submit %>
+         <div id="discussions" class="tab-pane" data-controller="post">
+            <%= simple_form_for([@group, @post], html: { "data-post-target": "form", class: "discussion-form"}) do |f| %>
+            <%= f.input :content, input_html: { data: {post_target: "content"}}%>
+              <input data-action="click->post#post" type="submit" name="commit" value="Create Post" data-disable-with="Create Post">
             <% end %>
 
-            <% @group.posts.each do |post| %>
-              <%= link_to group_smya_path(@group, post) do %>
-
-              <div class="post-creator">
-                <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle"%>
-                <%= current_user.nickname %>
-              </div>
-
-              <div data-controller= "show">
-                <div class="postt-container" data-show-target="postt" id="post-<%= post.id %>">
-                  <i class="fa-regular fa-envelope"></i>
-                  <%= post.content %>
-                </div>
-                <button class="show-more" data-action="click->show#show" data-post-id="<%= post.id %>"><em>Show More &gt; </em></button>
-              </div>
-              <% end %>
-            <% end %>
-
+            <div data-post-target = 'posts' >
+              <%= render "posts" , group: @group %>
+            </div>
          </div>
 
 
