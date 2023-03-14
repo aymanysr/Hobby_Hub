@@ -3,22 +3,43 @@
 }
 #post-show{
   min-height: 500px;
-
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 15px;
   border-radius: 20px;
   box-shadow: 0 35px 80px rgba(0,0,0,0.15);
 }
-.lasa {
-  
+.la p{
+  font-weight: bold;
+  margin-left: 15px;
+  margin-top: 20px;
 
 }
+.title{
+  margin-top: 9px;
+}
+.card-d{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: -90px;
+  left: 35%;
+  box-shadow:0 15px 35px -15px rgba(0,0,0,0.5),0 5px 20px 0 rgba(0,0,0,0.1);
 
+}
+.card-d img{
+  width: 100%;
+  transform: scale(1.2);
+}
 #group-tv{
   position: relative;
-  overflow-x: hidden!important;
-  min-height: 350px;
+  min-height: 450px;
   box-sizing: border-box;
   font-family: 'Quicksand', sans-serif;
   color: #324e63;
+  padding-top: 40px;
 
 
 

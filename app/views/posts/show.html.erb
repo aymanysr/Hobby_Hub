@@ -3,10 +3,17 @@
   <div class="row">
     <div class="col-8">
      <div id="post-show">
-<p><%= @post.user.email %></p>
-                <%= cl_image_tag @post.user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+     <div class="la d-flex">
+           <%= cl_image_tag @post.user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 
+          <p><%= @post.user.email %></p>
+    </div>
        <p><%= @post.content %></p>
+       <%if @post.photo.attached? %>
+           <%= cl_image_tag @post.photo.key%>
+       <% end %>
+
+
            <div class="lasa">
             <div class="bg-white">
               <div class="d-flex flex-row fs-12">
@@ -41,6 +48,10 @@
      <div class="wrapper">
 
      <div id="group-tv" >
+<div class="card-d">
+<%= cl_image_tag @group.photo.key, crop: :fit %>
+
+ </div>
 
         <div class ="iconss">
           <span class="icon"><i id="i-t" class="fa-solid fa-location-dot"></i> <%= @group.city.name  %></span>
@@ -56,10 +67,9 @@
       <h3>30<br><span>Events</span></h3>
 
       </div>
-<%= link_to "Join", group_path(@group), class: "t" %>
+<%= link_to "Back", group_path(@group), class: "t" %>
      </div>
       </div>
 
   </div>
 </div>
-
