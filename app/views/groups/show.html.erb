@@ -51,6 +51,26 @@
                 </a>
 
           </nav>
+           <script>
+            const facebookShareBtn = document.querySelector('.facebook_share_btn');
+            facebookShareBtn.addEventListener('click', () => {
+              const link = facebookShareBtn.getAttribute('data-open-share-link');
+              window.open(`https://www.facebook.com/sharer/sharer.php?u=${link}`);
+            });
+
+            const instagramShareBtn = document.querySelector('.instagram_plus_share_btn');
+            instagramShareBtn.addEventListener('click', () => {
+              const url = instagramShareBtn.getAttribute('data-open-share-url');
+              window.open(`https://www.instagram.com/?url=${url}`);
+            });
+
+            const twitterShareBtn = document.querySelector('.twitter_share_btn');
+            twitterShareBtn.addEventListener('click', () => {
+              const url = twitterShareBtn.getAttribute('data-open-share-url');
+              const title = twitterShareBtn.getAttribute('data-open-share-title');
+              window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`);
+            });
+        </script>
 
       </div>
 
@@ -99,6 +119,31 @@
         <div id="plus" class="tab-pane">
           <p> This is the plus tab content.</p>
         </div>
+        
+        <script>
+          const tabLi = document.querySelectorAll('.tabs-underlined li');
+          const tabLinks = document.querySelectorAll('.tab-underlined');
+          const tabContents = document.querySelectorAll('.tab-pane');
+
+          tabLinks.forEach((link) => {
+            link.addEventListener('click', (e) => {
+              e.preventDefault();
+              const selected = link.dataset.tab;
+              tabLi.forEach((link) => {
+                link.classList.remove('active');
+              });
+              tabLinks.forEach((link) => {
+                link.classList.remove('active');
+              });
+              tabContents.forEach((tab) => {
+                tab.classList.remove('active');
+              });
+              link.classList.add('active');
+              link.parentNode.classList.add('active');
+              document.getElementById(selected).classList.add('active');
+            });
+          });
+        </script>
 
       </div>
 
@@ -157,50 +202,3 @@
   </div>
 
 </div>
-
-
- <script>
-    const facebookShareBtn = document.querySelector('.facebook_share_btn');
-    facebookShareBtn.addEventListener('click', () => {
-      const link = facebookShareBtn.getAttribute('data-open-share-link');
-      window.open(`https://www.facebook.com/sharer/sharer.php?u=${link}`);
-    });
-
-    const instagramShareBtn = document.querySelector('.instagram_plus_share_btn');
-    instagramShareBtn.addEventListener('click', () => {
-      const url = instagramShareBtn.getAttribute('data-open-share-url');
-      window.open(`https://www.instagram.com/?url=${url}`);
-    });
-
-    const twitterShareBtn = document.querySelector('.twitter_share_btn');
-    twitterShareBtn.addEventListener('click', () => {
-      const url = twitterShareBtn.getAttribute('data-open-share-url');
-      const title = twitterShareBtn.getAttribute('data-open-share-title');
-      window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`);
-    });
-</script>
-
-<script>
-  const tabLi = document.querySelectorAll('.tabs-underlined li');
-  const tabLinks = document.querySelectorAll('.tab-underlined');
-  const tabContents = document.querySelectorAll('.tab-pane');
-
-  tabLinks.forEach((link) => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const selected = link.dataset.tab;
-      tabLi.forEach((link) => {
-        link.classList.remove('active');
-      });
-      tabLinks.forEach((link) => {
-        link.classList.remove('active');
-      });
-      tabContents.forEach((tab) => {
-        tab.classList.remove('active');
-      });
-      link.classList.add('active');
-      link.parentNode.classList.add('active');
-      document.getElementById(selected).classList.add('active');
-    });
-  });
-</script>
