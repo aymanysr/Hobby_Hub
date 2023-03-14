@@ -12,3 +12,6 @@ application.register("hello", HelloController)
 
 import SearchGroupsController from "./search_groups_controller"
 application.register("search-groups", SearchGroupsController)
+
+import ShowController from "./show_controller"
+application.register("show", ShowController)
