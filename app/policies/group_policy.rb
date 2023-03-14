@@ -14,6 +14,10 @@ class GroupPolicy < ApplicationPolicy
     true
   end
 
+  def filter?
+    true
+  end
+
   def update?
     record.user == user
     # record: the group passed to the `authorize` method in controller

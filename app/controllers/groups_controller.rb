@@ -15,7 +15,14 @@ class GroupsController < ApplicationController
   end
 
   def filter
-    @groups = Group.joins(:category, :city).where(city_id: params[:city_ids])
+    if params[:city_ids].present? || params[:category_ids].present?
+      @groups = Group.where(city_id: params[:city_ids]).or( Group.where( category_id: params[:category_ids]))
+    else
+      @groups = Group.all
+    end
+
+    render partial: "groups/list", locals: { groups: @groups }, formats: [:html]
+    # authorize @group
   end
 
   def join
