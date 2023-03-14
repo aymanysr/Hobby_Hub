@@ -106,20 +106,31 @@
           <p> This is the events tab content.</p>
         </div>
          <div id="discussions" class="tab-pane">
-            <%= simple_form_for([@group, @post]) do |f| %>
+            <%= simple_form_for([@group, @post], html: {class: "discussion-form"}) do |f| %>
               <%= f.input :content %>
               <%= f.submit %>
             <% end %>
+
             <% @group.posts.each do |post| %>
               <%= link_to group_smya_path(@group, post) do %>
+              <div data-controller= "show">
+                <div class="postt-container" data-show-target="postt" id="post-<%= post.id %>">
+                  <i class="fa-regular fa-envelope"></i>
                   <%= post.content %>
+                </div>
+                <button class="show-more" data-action="click->show#show" data-post-id="<%= post.id %>"><em>Show More &gt; </em></button>
+              </div>
               <% end %>
             <% end %>
+
          </div>
+
+
+
         <div id="plus" class="tab-pane">
           <p> This is the plus tab content.</p>
         </div>
-        
+
         <script>
           const tabLi = document.querySelectorAll('.tabs-underlined li');
           const tabLinks = document.querySelectorAll('.tab-underlined');

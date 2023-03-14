@@ -1,3 +1,16 @@
+$readd-more: (
+  'rows': 3,
+  'font-size': 16px,
+  'line-height': 1.4,
+  'duration': 500ms,
+  'easing': ease,
+  'text-color': #34495e,
+  'trigger-color': #2980b9,
+  'bg-color': #ffffff
+);
+
+$readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'line-height') * (map-get($readd-more, 'rows') + 1);
+
 #group-show {
   #i-t {
     margin: 21px 7px;
@@ -325,16 +338,80 @@
       color: white;
     }
 
-    // .join-btn {
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   background-color: #ff4014;
-    //   height: 45px;
-    //   box-shadow: 0px 3px 6px 3px white;
 
-    // }
+    // discussion form
+
+    .discussion-form {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .post_content {
+      width: 100%;
+    }
+
+    .discussion-form input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .discussion-form input[type="submit"] {
+      position: absolute;
+      bottom: -21px;
+      right: 18px;
+      background-color: #ff4014;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .discussion-form input[type="submit"]:hover {
+      background-color: #faa000;
+    }
+
+    #discussions a {
+      display: block;
+      margin: 40px 18px 10px 18px;
+      color: #333;
+      text-decoration: none;
+      text-align: justify;
+      border: double;
+      border-radius: 5px;
+      padding: 15px;
+      background-color:#87949933;
+    }
+
+    #discussions a:hover {
+      text-decoration: none;
+    }
+
+    .postt-container {
+      max-height: 77px;
+      height: 77px;
+      overflow: hidden;
+      transition: .3s all ease-in-out;
+    }
+
+    // show more button
+
+    .show-more {
+      text-decoration: none;
+      border: transparent;
+      background-color: transparent;
+      color: #007bff;
+      padding-left: 0;
+    }
+
 
   // about_card
 
@@ -389,7 +466,7 @@
   }
 
   .tab-content .active {
-    background-color: rgba(255, 64, 20,.2);
+    background-color: white;
     margin-top: 18px;
     border-top-style: double;
     border-top-color: #666;
