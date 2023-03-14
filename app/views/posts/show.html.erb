@@ -1,29 +1,63 @@
 <div class="container">
- <div class="row">
-<div class="col-8">
- <div id="post-show">
-  <p><%= @post.content %></p>
- </div>
- </div>
- <div class="col-4">
- <div id="group-tv" >
-  
-   <div class ="iconss">
-  <span class="icon"><i id="i-t" class="fa-solid fa-location-dot"></i> <%= @group.city.name  %></span>
-  <span class="icon"><i id="i-t" class="fa-regular fa-message"></i> +<%= rand(20..50)%> Recent posts</span>
- </div>
-  <h2 class="title"><i class="fas fa-thumbs-up"></i> <%= @group.title %></h2>
+  <div class="row">
+    <div class="col-8">
+     <div id="post-show">
+<p><%= @post.user.email %></p>
+                <%= cl_image_tag @post.user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 
-        <p><i id="i-t"  class="fa-solid fa-quote-right"></i><%= @group.category.name%></p>
-        <p><em>Public</em></p>
-        <p> <%= @group.description %> </p>
-        <div class="avatar-group-card">
- </div>
- </div>
-   </div>
-</div>
-<div id="group-show" class="container">
+       <p><%= @post.content %></p>
+           <div class="lasa">
+            <div class="bg-white">
+              <div class="d-flex flex-row fs-12">
+                <div class="like p-2 cursor">
+                  <i class="fa-solid fa-thumbs-up"></i>
+                  <span class="ml-1">Like</span>
+                </div>
+                <div class="like p-2 cursor">
+                  <i class="fa-sharp fa-regular fa-comment"></i>
+                  <span class="ml-1">Comment</span>
+                </div>
+                <div class="like p-2 cursor">
+                  <i class="fa fa-share"></i>
+                  <span class="ml-1">Share</span>
+                </div>
+              </div>
+            </div>
+            <div class="bg-light p-2">
+                 <div class="d-flex flex-row align-items-start">
+                <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                    <textarea class=" form-control ml-1 shadow-none textarea"></textarea>
+                 </div>
+                 <div class=mt-2 text-right>
+                 <button class="btn btn-success btn-sm shadow-none" type="button"> Comment</button>
+                 </div>
+            </div>
+            </div>
+     </div>
+    </div>
+    <div class="col-4">
 
+     <div class="wrapper">
+
+     <div id="group-tv" >
+
+        <div class ="iconss">
+          <span class="icon"><i id="i-t" class="fa-solid fa-location-dot"></i> <%= @group.city.name  %></span>
+           <span class="icon"><i id="i-t" class="fa-regular fa-message"></i> +<%= rand(20..50)%> Recent posts</span>
+        </div>
+     <h2 class="title"><i class="fas fa-thumbs-up"></i> <%= @group.title %></h2>
+      <p><i id="i-t"  class="fa-solid fa-quote-right"></i><%= @group.category.name%></p>
+      <p><em>Public</em></p>
+      <p> <%= @group.description %> </p>
+      <div class="data">
+      <h3>342<br><span>Posts</span></h3>
+      <h3>120k<br><span>Members</span></h3>
+      <h3>30<br><span>Events</span></h3>
+
+      </div>
+<%= link_to "Join", group_path(@group), class: "t" %>
+     </div>
+      </div>
 
   </div>
 </div>
