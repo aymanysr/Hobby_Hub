@@ -48,8 +48,8 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-
-    if @group.save
+    @group.user_id = current_user.id
+    if @group.save!
       redirect_to @group, notice: 'Group was successfully created.'
     else
       render :new
