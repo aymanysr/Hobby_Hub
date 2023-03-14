@@ -22,8 +22,7 @@
               <%= f.input :gender %>
             </div>
             <div class="form-inputs">
-              <%= f.input :birthdate %>
-            </div>
+              <%= f.input :birthdate, label: "Date of birth", start_year: Date.today.year - 70, end_year: Date.today.year - 18 %></div>
             <div class="form-inputs">
               <%= f.input :avatar, as: :file %>
             </div>
