@@ -11,7 +11,7 @@
                   <label>City:</label>
                   <% City.all.each do |city| %>
                     <div class="form-check">
-                      <label for="city_ids_<%= city.id %>" class="form-check-label"> <%= city.name %>
+                      <label for="city_ids_<%= city.id %>" class="form-check-label">
                       <input type="checkbox" name="city_ids_<%= city.id %>" id="city_ids_<%= city.id %>" value="<%= city.id %>" class="form-check-input city toggle__input" data-action="change->filter#update">
                         <span class="toggle-track">
                           <span class="toggle-indicator">
@@ -22,6 +22,7 @@
                             </span>
                           </span>
                         </span>
+                        <%= city.name %>
                       </label>
                     </div>
                   <% end %>
@@ -31,9 +32,6 @@
                 <% Category.all.each do |category| %>
                   <div class="form-check">
                     <label for="category_ids_<%= category.id %>" class="form-check-label">
-                      <span class="category-name">
-                        <%= category.name %>
-                      </span>
                       <input type="checkbox" name="category_ids[]" id="category_ids_<%= category.id %>" value="<%= category.id %>" class="form-check-input category toggle__input" data-action="change->filter#update">
                       <span class="toggle-track">
                         <span class="toggle-indicator">
@@ -44,6 +42,7 @@
                           </span>
                         </span>
                       </span>
+                      <%= category.name %>
                     </label>
                   </div>
                 <% end %>
