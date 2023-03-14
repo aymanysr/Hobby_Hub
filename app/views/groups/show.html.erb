@@ -113,6 +113,12 @@
 
             <% @group.posts.each do |post| %>
               <%= link_to group_smya_path(@group, post) do %>
+
+              <div class="post-creator">
+                <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle"%>
+                <%= current_user.nickname %>
+              </div>
+
               <div data-controller= "show">
                 <div class="postt-container" data-show-target="postt" id="post-<%= post.id %>">
                   <i class="fa-regular fa-envelope"></i>
