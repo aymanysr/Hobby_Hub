@@ -245,7 +245,8 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
     padding: 20px;
     max-width: 265px;
     margin-left: 20px;
-    height: 935px;
+    height: 375px;
+    max-height: fit-content;
     margin-top: 1px;
     justify-content: flex-end;
     border-radius: 10px;
@@ -281,7 +282,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
     bottom: calc(100% + .5rem);
     left: 50%;
     transform: translateX(86%);
-    padding: .5rem .75rem;
+    padding: .5rem 1.5rem;
     border-radius: .25rem;
     // background-color: rgba(0, 0, 0, .7);
     color: #060606;
@@ -405,7 +406,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
 
     #discussions a {
       display: block;
-      margin: 0 18px 10px 18px;
+      margin: 0 18px 24px 18px;
       color: #333;
       text-decoration: none;
       text-align: justify;
