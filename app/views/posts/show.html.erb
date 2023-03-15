@@ -2,81 +2,68 @@
 <div class="container">
   <div class="row">
     <div class="col-8">
-     <div id="post-show">
-     <div class="la d-flex">
-           <%= cl_image_tag @post.user.avatar.key, width: 42, height: 42, crop: :thumb, gravity: :face %>
-
+      <div id="post-show">
+        <div class="la d-flex">
+          <%= cl_image_tag @post.user.avatar.key, width: 42, height: 42, crop: :thumb, gravity: :face %>
           <p><%= @post.user.email %></p>
-    </div>
-       <p><%= @post.content %></p>
-       <%if @post.photo.attached? %>
-           <%= cl_image_tag @post.photo.key%>
-       <% end %>
-
-
-           <div class="lasa">
-            <div class="bg-white">
-              <div class="d-flex flex-row fs-12">
-                <div class="like p-2 cursor">
-                  <i class="fa-solid fa-thumbs-up"></i>
-                  <span class="ml-1">Like</span>
-                </div>
-                <div class="like p-2 cursor">
-                  <i class="fa-sharp fa-regular fa-comment"></i>
-                  <span class="ml-1">Comment</span>
-                </div>
-                <div class="like p-2 cursor">
-                  <i class="fa fa-share"></i>
-                  <span class="ml-1">Share</span>
-                </div>
+        </div>
+        <p><%= @post.content %></p>
+        <%if @post.photo.attached? %>
+          <%= cl_image_tag @post.photo.key%>
+        <% end %>
+        <div class="lasa">
+          <div class="bg-white">
+            <div class="d-flex flex-row fs-12">
+              <div class="like p-2 cursor">
+                <i class="fa-solid fa-thumbs-up"></i>
+                <span class="ml-1">Like</span>
+              </div>
+              <div class="like p-2 cursor">
+                <i class="fa-sharp fa-regular fa-comment"></i>
+                <span class="ml-1">Comment</span>
+              </div>
+              <div class="like p-2 cursor">
+                <i class="fa fa-share"></i>
+                <span class="ml-1">Share</span>
               </div>
             </div>
-            <div class="bg-light p-2" data-controller="comment">
+          </div>
 
+          <div class="bg-light p-2" data-controller="comment">
             <%= simple_form_for([@post, Comment.new], html: { "data-comment-target": "form"}) do |f| %>
             <%= f.input :content %>
-
-            <input data-action="click->comment#comment" type="submit" name="commit" value="Create Comment" data-disable-with="Create Comment">
+              <input data-action="click->comment#comment" type="submit" name="commit" value="Create Comment" data-disable-with="Create Comment">
             <% end %>
-
-          <div class="comments-container" data-comment-target="comments">
-            <%= render "comments" , post: @post %>
+            <div class="comments-container" data-comment-target="comments">
+              <%= render "comments" , post: @post %>
+            </div>
           </div>
-            <form action="/post_comment" method="POST" data-comment-target="form">
-              <div data-comment-target="comments">
-              </div>
-            </form>
-            </div>
-            </div>
-     </div>
+
+        </div>
+      </div>
     </div>
     <div class="col-4">
+      <div class="wrapper">
+        <div id="group-tv" >
+          <div class="card-d">
+            <%= cl_image_tag @group.photo.key, crop: :fit %>
+          </div>
 
-     <div class="wrapper">
+          <div class ="iconss">
+            <span class="icon"><i id="i-t" class="fa-solid fa-location-dot"></i> <%= @group.city.name  %></span>
+            <span class="icon"><i id="i-t" class="fa-regular fa-message"></i> +<%= rand(20..50)%> Recent posts</span>
+          </div>
+          <h2 class="title"><i class="fas fa-thumbs-up"></i> <%= @group.title %></h2>
+          <p><i id="i-t"  class="fa-solid fa-quote-right"></i><%= @group.category.name%></p>
+          <p><em>Public</em></p>
+          <p> <%= @group.description %> </p>
+          <div class="data">
+          <h3>342<br><span>Posts</span></h3>
+          <h3>120k<br><span>Members</span></h3>
+          <h3>30<br><span>Events</span></h3>
 
-     <div id="group-tv" >
-<div class="card-d">
-<%= cl_image_tag @group.photo.key, crop: :fit %>
-
- </div>
-
-        <div class ="iconss">
-          <span class="icon"><i id="i-t" class="fa-solid fa-location-dot"></i> <%= @group.city.name  %></span>
-           <span class="icon"><i id="i-t" class="fa-regular fa-message"></i> +<%= rand(20..50)%> Recent posts</span>
         </div>
-     <h2 class="title"><i class="fas fa-thumbs-up"></i> <%= @group.title %></h2>
-      <p><i id="i-t"  class="fa-solid fa-quote-right"></i><%= @group.category.name%></p>
-      <p><em>Public</em></p>
-      <p> <%= @group.description %> </p>
-      <div class="data">
-      <h3>342<br><span>Posts</span></h3>
-      <h3>120k<br><span>Members</span></h3>
-      <h3>30<br><span>Events</span></h3>
-
-      </div>
-<%= link_to "Back", group_path(@group), class: "t" %>
-     </div>
-      </div>
-
+        <%= link_to "Back", group_path(@group), class: "t" %>
+    </div>
   </div>
 </div>
