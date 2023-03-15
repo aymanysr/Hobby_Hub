@@ -156,18 +156,27 @@
       <div class="avatar-group-card">
 
         <div class="join-btn">
-          <% if UserGroup.pluck(:user_id).include?(current_user.id) %>
-              <form action="/leave_group" method="PUT">
-              <input type="submit" class="bttnn d-flex justify-content-center btn" value="Leave Group">
-              <input type="hidden" name="group_id" value="<%= @group.id %>">
-            </form>
-          <% else %>
-            <form action="/join_group" method="PUT">
-              <input type="submit" class="bttnn d-flex justify-content-center" value="Join Group">
-              <input type="hidden" name="group_id" value="<%= @group.id %>">
-            </form>
-          <% end %>
-        </div>
+            <% if UserGroup.pluck(:user_id).include?(current_user.id) %>
+              <form action="/leave_group" method="PUT" id="leave-form">
+                <input type="submit" class="bttnn d-flex justify-content-center" value="Leave Group">
+                <input type="hidden" name="group_id" value="<%= @group.id %>">
+              </form>
+            <% else %>
+              <form action="/join_group" method="PUT">
+                <input type="submit" class="bttnn d-flex justify-content-center" value="Join Group">
+                <input type="hidden" name="group_id" value="<%= @group.id %>">
+              </form>
+            <% end %>
+          </div>
+
+          <script>
+            document.getElementById("leave-form").addEventListener("submit", function(event) {
+              if (!confirm("Are you sure to leave this group?")) {
+                event.preventDefault();
+              }
+            });
+          </script>
+
 
         <h3 class="avatar-card-title">Members</h3>
 
