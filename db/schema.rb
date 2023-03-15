@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_14_133204) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_15_093806) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -85,6 +85,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_133204) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "group_id"
+    t.index ["group_id"], name: "index_meetings_on_group_id"
     t.index ["user_id"], name: "index_meetings_on_user_id"
   end
 
@@ -132,6 +134,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_133204) do
   add_foreign_key "groups", "categories"
   add_foreign_key "groups", "cities"
   add_foreign_key "groups", "users"
+  add_foreign_key "meetings", "groups"
   add_foreign_key "meetings", "users"
   add_foreign_key "posts", "groups"
   add_foreign_key "posts", "users"

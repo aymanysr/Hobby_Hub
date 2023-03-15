@@ -10,10 +10,13 @@ Rails.application.routes.draw do
   resources :groups do
     post "posts", to: "posts#create"
     get "posts/:id", to: "posts#show", as: "smya"
+    resources :meetings
+  end
+  resources :posts do
+    resources :comments, only: :create
   end
   get "groups_filter", to: "groups#filter"
   put "join_group", to: "groups#join"
   put "leave_group", to: "groups#leave"
 
-  resources :meetings
 end
