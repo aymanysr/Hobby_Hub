@@ -2,11 +2,15 @@
   <%= link_to group_smya_path(group, post) do %>
 
     <div class="post-creator">
-
-      <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle"%>
-      <%= current_user.nickname %>
-      Created at <%= post.created_at.strftime('%A %d %B %Y - %H:%M:%S') %>
-
+      <div class= "pt-creator">
+        <%= cl_image_tag post.user.avatar.key, class: "avatar dropdown-toggle"%>
+      </div>
+      <div class="pt-creator">
+        Created by <%= post.user.nickname %>
+      </div>
+      <div class="pt-creator">
+        on <%= post.created_at.strftime('%B %dth, %Y - %H:%M %P') %>
+      </div>
     </div>
 
   <div data-controller= "show">
