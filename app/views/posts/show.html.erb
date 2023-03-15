@@ -4,7 +4,7 @@
     <div class="col-8">
      <div id="post-show">
      <div class="la d-flex">
-           <%= cl_image_tag @post.user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+           <%= cl_image_tag @post.user.avatar.key, width: 42, height: 42, crop: :thumb, gravity: :face %>
 
           <p><%= @post.user.email %></p>
     </div>
@@ -33,7 +33,7 @@
             </div>
             <div class="bg-light p-2">
                  <div class="d-flex flex-row align-items-start">
-                <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <%= cl_image_tag current_user.avatar.key, width: 42, height: 42, crop: :thumb, gravity: :face %>
                     <textarea class=" form-control ml-1 shadow-none textarea"></textarea>
                  </div>
                  <div class=mt-2 text-right>
