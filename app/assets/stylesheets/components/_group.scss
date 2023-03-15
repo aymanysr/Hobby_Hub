@@ -245,7 +245,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
     padding: 20px;
     max-width: 265px;
     margin-left: 20px;
-    height: 455px;
+    height: 980px;
     margin-top: 1px;
     justify-content: flex-end;
     border-radius: 10px;
@@ -288,6 +288,16 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
     font-size: .875rem;
     white-space: nowrap;
     // opacity: 0;
+  }
+
+  .dropdown-toggle {
+    width: 66px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+
+  .post-creator .avatar {
+    margin-right: 10px; /* add some right margin to the avatar */
   }
 
   .avatar-btn {
@@ -338,6 +348,11 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
       color: white;
     }
 
+    .post-creator {
+      display: flex;
+      align-items: center;
+    }
+
 
     // discussion form
 
@@ -365,7 +380,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
 
     .discussion-form input[type="submit"] {
       position: absolute;
-      bottom: -21px;
+      bottom: -26px;
       right: 18px;
       background-color: #ff4014;
       color: #fff;
@@ -381,7 +396,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
 
     #discussions a {
       display: block;
-      margin: 40px 18px 10px 18px;
+      margin: 0 18px 10px 18px;
       color: #333;
       text-decoration: none;
       text-align: justify;
@@ -389,6 +404,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
       border-radius: 5px;
       padding: 15px;
       background-color:#87949933;
+      box-shadow: 0px 3px 15px -3px grey;
     }
 
     #discussions a:hover {
@@ -401,6 +417,12 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
       overflow: hidden;
       transition: .3s all ease-in-out;
     }
+
+    .posts-container {
+      height: 300px;
+      margin-top: 45px;
+    }
+
 
     // show more button
 
@@ -417,7 +439,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
 
   .about-card {
     flex: 1;
-    height: 455px;
+    height: 980px;
     padding: 20px;
     background-color:#87949933;
     border-radius: 40px 0px;
@@ -475,7 +497,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
   .tab-pane {
     display: none;
     justify-content: center;
-    min-height: 310px;
+    min-height: 825px;
     border-radius: 0 0 40px;
   }
 
