@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   get "groups_filter", to: "groups#filter"
   put "join_group", to: "groups#join"
   put "leave_group", to: "groups#leave"
+
+  resources :meetings
 end

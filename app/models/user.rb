@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :user_groups
   has_many :groups, through: :user_groups
+  has_many :meetings
   has_one_attached :avatar
 end
