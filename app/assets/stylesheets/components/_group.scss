@@ -432,8 +432,9 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
     }
 
     .posts-container {
-      height: 300px;
+      min-height: 300px;
       margin-top: 45px;
+      padding-bottom: 1px;
     }
 
 
@@ -452,7 +453,8 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
 
   .about-card {
     flex: 1;
-    height: 935px;
+    min-height: 935px;
+    height: fit-content;
     padding: 20px;
     background-color:#87949933;
     border-radius: 40px 0px;
