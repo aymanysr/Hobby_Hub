@@ -11,7 +11,7 @@ class PostsController < ApplicationController
         format.html { redirect_to group_path(@post.group_id), notice: 'Post was successfully created.' }
         format.text { render partial: "groups/posts", locals: {group: @group}, formats: [:html] }
       end
-      
+
     else
       render :new
     end
@@ -25,6 +25,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :group_id)
+    params.require(:post).permit(:content, :photo, :group_id)
   end
 end

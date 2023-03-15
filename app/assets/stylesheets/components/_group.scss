@@ -297,7 +297,10 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
     margin-bottom: 10px;
     }
 
-
+  label {
+    margin-right: auto;
+    margin-bottom: 0.5rem;
+    }
   .post-creator .avatar {
     margin-right: 10px;
   }
@@ -429,8 +432,9 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
     }
 
     .posts-container {
-      height: 300px;
+      min-height: 300px;
       margin-top: 45px;
+      padding-bottom: 1px;
     }
 
 
@@ -449,8 +453,10 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
 
   .about-card {
     flex: 1;
-    height: 935px;
+    min-height: 500px;
+    height: fit-content;
     padding: 20px;
+    padding-bottom: 53px;
     background-color:#87949933;
     border-radius: 40px 0px;
     box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.16);
@@ -507,7 +513,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
   .tab-pane {
     display: none;
     justify-content: center;
-    min-height: 802px;
+    min-height: 400px;
     border-radius: 0 0 40px;
   }
 
