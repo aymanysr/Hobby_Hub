@@ -112,7 +112,7 @@
             <input data-action="click->post#post" type="submit" name="commit" value="Create Post" data-disable-with="Create Post">
             <% end %>
 
-          <div class="posts-container">
+          <div class="posts-container" data-post-target="posts">
             <%= render "posts" , group: @group %>
           </div>
          </div>
