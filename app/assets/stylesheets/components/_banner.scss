@@ -1,0 +1,48 @@
+#ban{
+  .banner {
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+
+  }
+  span{
+    color: #ff4b01;
+  }
+  .pict{
+    width: 540px;
+    position: absolute;
+    right: 8%;
+    bottom: 0;
+    margin-bottom: 170px;
+  }
+  .container-tr h1 {
+    margin: 0;
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .container-tr p {
+    font-size: 20px;
+  color: rgb(0, 0, 0);
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-left: 27px;
+  margin-bottom: 15px;
+  }
+  .d{
+    margin-top: 12px;
+    position: relative;
+    padding: 10px 25px;
+    background: #ff4b01;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 25px;
+    font-weight: 500;
+    text-shadow: 0 2px 2px rgba(0,0,0,0.25);
+    margin-left: 27px;
+
+  }
+
+}

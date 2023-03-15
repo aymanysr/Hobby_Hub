@@ -1,2 +1,237 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id="ban">
+  <div class="banner" >
+    <div class="container-tr">
+      <h1>Discover <span class="auto-input"></span></h1>
+      <p>Hobby-Hub makes it easy to explore your interests and connect with <br> others who share them. Simply search for your favorite hobbies
+      </p>
+
+    </div>
+    <img src="https://res.cloudinary.com/dlgrirjkk/image/upload/v1678696040/NetworkOrange-removebg-preview_tvgpdy.png" class="pict">
+  </div>
+<hr>
+  <div>
+    <h1>What Are You looking for?</h1>
+
+  </div>
+  
+   <div class="col-md-4 ">
+      <!-- Search bar and search results -->
+  <div data-controller="search-groups">
+    <%= form_with url: groups_path, method: :get, html: {class: "mb-4", data: {search_groups_target: "form"}} do |f| %>
+
+      <%= f.text_field :query, class: "form-control", placeholder:
+                       "Type a group title", value: params[:query],
+                       data: {
+                          search_groups_target: "input",
+                          action: "keyup->search-groups#update"
+                        } %>
+      <%= f.submit "Search",
+      class: "btn btn-primary",
+      data: {search_groups_target: "submit"} %>
+
+    <% end %>
+
+
+  </div>
+</div>
+ <hr>
+   <div>
+    <h2>Trending Groups</h2>
+  </div>
+  <div class="d-flex justify-content-around flex-wrap">
+    <% @groups.each do | group | %>
+      <div id="dd">
+          <div class="container-k">
+            <div class="drop" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), "
+>
+              <div class="content">
+                <h3><%= group.title %> </h3>
+                <p class="multiline-ellipsis"><%= group.description %> </p>
+                <div class="nana" >
+                </div>
+                <a href="" class="read">Read More</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    <% end %>
+  </div>
+
+<div class="we">
+    <h1 id="banee">How it works</h1>
+
+  <div class="container-l ">
+
+    <div class="rowbene ">
+
+
+      <div class="col-md-4 ">
+        <div class="main">
+          <div class="service">
+            <div class="service-logo">
+              <img src="https://static8.depositphotos.com/1378583/1062/v/600/depositphotos_10626144-stock-illustration-sun-human-logo.jpg" alt="">
+            </div>
+            <h4> Groups</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora non repellat laboriosam vero ipsum aperiam rem </p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4 ">
+        <div class="main">
+          <div class="service">
+            <div class="service-logo">
+            <img src="https://st2.depositphotos.com/1277743/5804/v/450/depositphotos_58044913-stock-illustration-friends-icon-design.jpg" alt="">
+            </div>
+            <h4> Friends</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora non repellat laboriosam vero ipsum aperiam rem </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 ">
+        <div class="main">
+          <div class="service">
+            <div class="service-logo">
+            <img src="https://thumbs.dreamstime.com/z/teamwork-children-star-group-vector-logo-school-activities-illustration-design-116982088.jpg" alt="">
+            </div>
+            <h4> Activity</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora non repellat laboriosam vero ipsum aperiam rem </p>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-ris">
+     <h2>Connect with us</h2>
+     <p>we would love to respond to your queris and help <br> you succeed. Feel free to get in touch with us</p>
+    <div class="conatct-box">
+      <div class="contact-left">
+        <h3>Send request</h3>
+        <!--Section: Contact v.2-->
+<section class="mb-4">
+
+    <!--Section heading-->
+
+    <!--Section description-->
+
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="name" name="name" class="form-control">
+                            <label for="name" class="">Your name</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="email" name="email" class="form-control">
+                            <label for="email" class="">Your email</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <input type="text" id="subject" name="subject" class="form-control">
+                            <label for="subject" class="">Subject</label>
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                            <label for="message">Your message</label>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+
+            </form>
+
+            <div class="text-center text-md-left">
+                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+            </div>
+            <div class="status"></div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+
+        <!--Grid column-->
+
+    </div>
+
+</section>
+<!--Section: Contact v.2-->
+      </div>
+
+      <div class="contact-right">
+        <h3>Reach us</h3>
+        <table>
+          <tr>
+            <td>Email</td>
+            <td>batch1125@example.com</td>
+          </tr>
+          <tr>
+            <td>Phone</td>
+            <td>090 00 00 00 </td>
+          </tr>
+          <tr>
+            <td>Adresse</td>
+            <td>Somewhere over the rainbow</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+</div>
+
+
+  <div  id="my-carousel" class="container-oo">
+  <h2 class="founds">Founders</h2>
+    <div id="carousel">
+      <figure><img src="https://ca.slack-edge.com/T02NE0241-U04KRSK20CQ-dddbc7db9892-512" alt=""></figure>
+      <figure><img src="https://plus.unsplash.com/premium_photo-1664368832503-7d9a4ccf25af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YWN0aXZpdHl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60" alt=""></figure>
+      <figure><img src="https://images.unsplash.com/photo-1635702961175-f6949dded992?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YWN0aXZpdHl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60" alt=""></figure>
+      <figure><img src="https://images.unsplash.com/photo-1540539234-c14a20fb7c7b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YWN0aXZpdHl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60" alt=""></figure>
+      <figure><img src="https://images.unsplash.com/photo-1569965335962-2317ff2a7658?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YWN0aXZpdHl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60" alt=""></figure>
+      <figure><img src="https://images.unsplash.com/photo-1498484502070-2165cb42d504?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGFjdGl2aXR5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt=""></figure>
+      <figure><img src="https://images.unsplash.com/photo-1562593028-1fe2d15bde36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGFjdGl2aXR5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt=""></figure>
+      <figure><img src="https://images.unsplash.com/photo-1500468756762-a401b6f17b46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" alt=""></figure>
+      <figure><img src="https://images.unsplash.com/photo-1500468756762-a401b6f17b46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" alt=""></figure>
+    </div>
+  </div>
+
+
+
+
+</div>

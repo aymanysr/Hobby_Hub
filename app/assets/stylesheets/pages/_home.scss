@@ -1,1 +1,315 @@
 // Specific CSS for your home-page
+#ban{
+  h1{
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 30px;
+    color: #333;
+    text-shadow: 2px 2px 4px #999;
+    margin: 10px;
+
+  }
+
+
+  hr{
+    color: #333;
+  }
+  .container-e{
+    margin-left: 20px;
+  }
+  h2{
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 30px;
+    color: #333;
+    text-shadow: 2px 2px 4px #999;
+  }
+
+
+}
+.we{
+  background-color: #f8f8f8;
+
+}
+
+
+.main:hover .service{
+  transform: translateY(-50px);
+}
+.main:hover img{
+  transform: rotate(360deg);
+}
+
+.we h1{
+  text-align: center;
+
+  color: #ff4b01;
+}
+.we p{
+  color: #333;
+
+}
+
+.main{
+  width: 80%;
+  min-height: 380px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 80px;
+  margin-left: 30px;
+
+}
+.rowbene{
+  display: flex;
+  justify-content: center;
+
+}
+.service h4{
+  color: #333;
+  height: 35px;
+  width: 80%;
+  background: #fff;
+  margin: 50px auto;
+  position: relative;
+}
+.service h4::after{
+  content: '';
+  width: 20px;
+  height: 30px;
+  background: linear-gradient(to right, #fff,#ff4b01);
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  z-index: -1;
+}
+.service h4::before{
+  content: '';
+  width: 20px;
+  height: 30px;
+  background: linear-gradient(to right, #fff,#ff4b01);
+  position: absolute;
+  left: -5px;
+  bottom: -5px;
+  z-index: -1;
+}
+.service{
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+
+}
+
+.service-logo{
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin: -90px auto 0;
+  background: #fff;
+  border: 18px solid #f8f8f8;
+
+}
+.service-logo img{
+  width: 50px;
+  margin-top: 20px;
+  transition: transform 1s;
+}
+#dd{
+
+  margin: 0 16px 0 16px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppings', sans-serif;
+  display: flex;
+  justify-content: center;
+
+  .container-k{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 16px 0;
+  }
+
+
+  h3{
+    font-weight: bold;
+  }
+  .container-k .drop{
+    position: relative;
+    width: 350px;
+    height: 350px;
+    box-shadow: inset 20px 20px 20px rgba(0,0,0,0.05),
+    25px 35px 20px rgba(0,0,0,0.05),
+    25px 20px 20px rgba(0,0,0,0.05),
+    inset -20px -20px 25px rgba(255,255,255,0.9);
+    transition: 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .container-k .drop:nth-child(1){
+    border-radius: 60% 40% 70% 30% / 30% 30% 70% 70% ;
+  }
+  .container-k .drop:nth-child(2){
+    border-radius: 60% 40% 70% 30% / 30% 30% 70% 70%   ;
+  }
+  .container-k .drop:nth-child(3){
+    border-radius: 60% 40% 70% 30% / 30% 30% 70% 70%   ;
+  }
+  .container-k .drop:hover{
+    border-radius: 50%;
+  }
+  .container-k .drop::before
+  {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 83px;
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50px;
+    opacity: 0.9;
+  }
+  .container-k .drop .content{
+    position: realtive;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+    gap: 15px;
+  }
+
+  a.read{
+    position: relative;
+    padding: 10px 25px;
+    background: #ff4b01;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 25px;
+    font-weight: 500;
+    text-shadow: 0 2px 2px rgba(0,0,0,0.25);
+    margin-left: 30px;
+
+
+    width: 196px;
+  }
+  .multiline-ellipsis {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* start showing ellipsis when 3rd line is reached */
+    white-space: pre-wrap; /* let the text wrap preserving spaces */
+  }
+}
+.container-ris{
+
+  width: 80%;
+  margin: 50px auto;
+}
+.conatct-box{
+   background-color: #f3f3f3;
+  display: flex;
+}
+.contact-left{
+  flex-basis: 60%;
+  padding: 40px 60px;
+}
+.contact-right{
+  flex-basis: 40%;
+  padding: 40px ;
+  background: #ff4b01;
+  color: #fff;
+
+}
+tr td:first-child{
+  padding-right: 20px;
+}
+tr td{
+  padding-top: 20px;
+}
+.container-ris h2{
+  font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+
+    color: #333;
+    text-shadow: 2px 2px 4px #999;
+}
+#my-carousel{
+  &.container-oo{
+    margin: 4% auto;
+    width: 210px;
+    height: 140px;
+    position: relative;
+    perspective: 1000px;
+  }
+  #carousel{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotation 20s infinite linear;
+  }
+  #carousel:hover{
+    animation-play-state: paused;
+  }
+  #carousel figure{
+    display: block;
+    position: absolute;
+    width: 186px;
+    height: 116px;
+    left: 10px;
+    top: 10px;
+
+    overflow: hidden;
+    border: solid 5px #faf6f5;
+  }
+  #carousel figure:nth-child(1){transform: rotateY(0deg) translateZ(288px);}
+  #carousel figure:nth-child(2) { transform: rotateY(40deg) translateZ(288px);}
+  #carousel figure:nth-child(3) { transform: rotateY(80deg) translateZ(288px);}
+  #carousel figure:nth-child(4) { transform: rotateY(120deg) translateZ(288px);}
+  #carousel figure:nth-child(5) { transform: rotateY(160deg) translateZ(288px);}
+  #carousel figure:nth-child(6) { transform: rotateY(200deg) translateZ(288px);}
+  #carousel figure:nth-child(7) { transform: rotateY(240deg) translateZ(288px);}
+  #carousel figure:nth-child(8) { transform: rotateY(280deg) translateZ(288px);}
+  #carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
+
+  img{
+    -webkit-filter: grayscale(1);
+    cursor: pointer;
+    transition: all .5s ease;
+  }
+  img:hover{
+    transform: scale(1.2,1.2);
+  }
+
+  @keyframes rotation{
+    from{
+      transform: rotateY(0deg);
+    }
+    to{
+      transform: rotateY(360deg);
+    }
+  }
+  .my-carousel{
+  margin: 20px !important;
+  }
+  .founds{
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    text-shadow: 2px 2px 4px #999;
+  }
+}

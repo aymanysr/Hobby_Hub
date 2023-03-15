@@ -1,9 +1,19 @@
-<div class="card-container">
-  <div data-search-groups-target="list">
+<div id="list" data-search-groups-target="list" data-filter-target="list">
+  <div class="card-container">
     <p class="h3">Groups</p>
     <% @groups.each do |group| %>
-    <h1><%= group.title %></h1>
-    <%= cl_image_tag group.photo.key, width: 150, height: 150, crop: :thumb %>
+      <div class="card">
+        <div class="card-image">
+          <%= cl_image_tag group.photo.key, width: 150, height: 150, crop: :thumb %>
+        </div>
+        <div class="card-title">
+          <h3><strong><%= group.title %></strong></h3>
+          <p class="multiline-ellipsis"><strong>Description: </strong><%= group.description %></p>
+          <p><strong>Category: </strong> <%= group.category_name %></p>
+          <p><strong>City: </strong> <%= group.city_name %></p>
+          <%= link_to "See more", group_path(group), class: "join-btn" %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
