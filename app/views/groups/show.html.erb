@@ -103,7 +103,7 @@
           <p> <%= @group.description %> </p>
         </div>
         <div id="events" class="tab-pane">
-          <p> This is the events tab content.</p>
+          <%= render "event", meetings: @meetings %>
         </div>
          <div id="discussions" class="tab-pane" data-controller="post">
             <%= simple_form_for([@group, @post], html: { "data-post-target": "form", class: "discussion-form"}) do |f| %>
