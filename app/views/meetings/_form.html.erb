@@ -1,37 +1,44 @@
-<div class="card">
-  <div class="card-body">
-    <%= form_with(model: meeting) do |form| %>
-      <% if meeting.errors.any? %>
-        <div style="color: red">
-          <h2><%= pluralize(meeting.errors.count, "error!") %></h2>
+<div id="new-meeting">
+  <div class="background-waves">
+    <div class="new-meeting-card-container">
+      <div class="box">
+        <div class="form">
+            <h1>new meeting</h1>
+          <%= form_with(model: meeting) do |form| %>
+            <% if meeting.errors.any? %>
+              <div style="color: red">
+                <h2><%= pluralize(meeting.errors.count, "error!") %></h2>
 
-          <ul>
-            <% meeting.errors.each do |error| %>
-              <li><%= error.full_message %></li>
+                <ul>
+                  <% meeting.errors.each do |error| %>
+                    <li><%= error.full_message %></li>
+                  <% end %>
+                </ul>
+              </div>
             <% end %>
-          </ul>
-        </div>
-      <% end %>
 
-      <div class="card-title">
-        <%= form.label :name, style: "display: block" %>
-        <%= form.text_field :name %>
+            <div class="card-title">
+              <%= form.label :name, style: "display: block" %>
+              <%= form.text_field :name %>
+            </div>
+            <div class="card-text">
+              <%= form.label :description, style: "display: block" %>
+              <%= form.text_area :description %>
+            </div>
+            <div class="card-text">
+              <%= form.label :start_time, style: "display: block" %>
+              <%= form.datetime_field :start_time %>
+            </div>
+            <div class="card-text">
+              <%= form.label :end_time, style: "display: block" %>
+              <%= form.datetime_field :end_time %>
+            </div>
+            <button class="btn btn-outline-warning">
+              <%= form.submit "Create meeting", style: "display: block" %>
+            </button>
+          <% end %>
+        </div>
       </div>
-      <div class="card-text">
-        <%= form.label :description, style: "display: block" %>
-        <%= form.text_area :description %>
-      </div>
-      <div class="card-text">
-        <%= form.label :start_time, style: "display: block" %>
-        <%= form.datetime_field :start_time %>
-      </div>
-      <div class="card-text">
-        <%= form.label :end_time, style: "display: block" %>
-        <%= form.datetime_field :end_time %>
-      </div>
-      <button class="btn btn-outline-warning">
-        <%= form.submit "Create meeting", style: "display: block" %>
-      </button>
-    <% end %>
+    </div>
   </div>
 </div>
