@@ -1,0 +1,1 @@
+exec rails s && yarn build --watch
