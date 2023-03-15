@@ -528,15 +528,29 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
     padding: 32px;
   }
 
+
+
   .back_to_groups {
     position: absolute;
+    left: 1193px;
     top: 921px;
     right: 0;
-    left: 1217px;
   }
 
   .back-t {
     text-decoration: none;
     font-style: italic;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #ff4014;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
   }
+
+  .back-t:hover {
+    background-color: #fff;
+    color: #007bff;
+  }
+
+
 }
