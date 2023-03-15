@@ -16,7 +16,7 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.new(meeting_params)
     @meeting.user_id = current_user.id
     if @meeting.save!
-      redirect_to @meeting, notice: 'Meeting was successfully created.'
+      redirect_to @meeting, notice: 'Event was successfully created.'
     else
       render :new
     end
