@@ -297,7 +297,10 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
     margin-bottom: 10px;
     }
 
-
+  label {
+    margin-right: auto;
+    margin-bottom: 0.5rem;
+    }
   .post-creator .avatar {
     margin-right: 10px;
   }
