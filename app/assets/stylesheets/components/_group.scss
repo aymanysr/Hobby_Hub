@@ -527,4 +527,16 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
   .tab-pane p {
     padding: 32px;
   }
+
+  .back_to_groups {
+    position: absolute;
+    top: 921px;
+    right: 0;
+    left: 1217px;
+  }
+
+  .back-t {
+    text-decoration: none;
+    font-style: italic;
+  }
 }
