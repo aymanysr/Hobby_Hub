@@ -17,10 +17,7 @@
 
       <div class="card-footer">
         <p class="card-text">
-        From: <%= meeting.start_time.strftime('%A, %B %d, %Y at %I:%M %p') %>
-        </p>
-        <p class="card-text">
-        To: <%= meeting.end_time.strftime('%A, %B %d, %Y at %I:%M %p') %>
+        On: <%= meeting.start_time.strftime('%A, %B %d, %Y at %I:%M %p') %>
         </p>
       </div>
     <% end %>
