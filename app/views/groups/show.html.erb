@@ -80,7 +80,11 @@
         </div>
 
         <div id="events" class="tab-pane">
-          <%= render "event", meetings: @meetings %>
+          <% if @group.users.pluck(:id).include?(current_user.id) %>
+              <%= render "event", meetings: @meetings %>
+            <% else %>
+              <span class="join-group-message" ><i class="fa-solid fa-triangle-exclamation ic2"></i>  You need to join the group first <i class="fa-regular fa-hand-point-right ic1"></i></span>
+          <% end %>
         </div>
 
          <div id="discussions" class="tab-pane" data-controller="post">
@@ -149,7 +153,7 @@
 
         <div class="avatar-btn">
             <small class="cardd-members">
-            <a href="" class="btn">+<%= @group.users.length + 1 %> members... See All!</a>
+              <a href="" class="btn">+<%= @group.users.length + 1 %> members... See All!</a>
             </small>
         </div>
         <div>
