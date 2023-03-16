@@ -518,6 +518,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
   .tab-content {
     margin-left: 62px;
     margin-right: 70px;
+    
   }
 
   .tab-content .active {
@@ -531,7 +532,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
     display: none;
     justify-content: center;
     min-height: 400px;
-    border-radius: 0 0 40px;
+    // border-radius: 0 0 40px;
   }
 
   .tab-pane.active {
