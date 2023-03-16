@@ -112,6 +112,14 @@ otaku = Category.create!(
   name: "Otaku"
 )
 
+chess = Category.create!(
+  name: "chess"
+)
+
+other = Category.create!(
+  name: "other"
+)
+
 PASSWORD = "123456"
 
 puts "creating living human beings and totally not random names put on a random picture"
