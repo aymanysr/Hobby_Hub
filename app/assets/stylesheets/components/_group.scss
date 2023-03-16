@@ -565,7 +565,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
   }
 
   .back-t:hover {
-    background-color: #fff;
+    background-color: transparent;
     color: #007bff;
   }
 
