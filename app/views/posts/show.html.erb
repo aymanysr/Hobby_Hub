@@ -5,7 +5,7 @@
       <div id="post-show">
         <div class="la d-flex">
           <%= cl_image_tag @post.user.avatar.key, width: 42, height: 42, crop: :thumb, gravity: :face %>
-          <p><%= @post.user.email %></p>
+          <p><%= @post.user.nickname %></p>
         </div>
         <p><%= @post.content %></p>
         <%if @post.photo.attached? %>
