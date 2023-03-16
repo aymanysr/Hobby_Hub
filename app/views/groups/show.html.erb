@@ -25,7 +25,7 @@
         <p><i id="i-t"  class="fa-solid fa-quote-right"></i><%= @group.category.name%></p>
         <p><em>Public</em></p>
 
-      <div class="wrapper">
+      <div class="wrappper">
         <nav class="menuShare" data-controller="share">
           <input type="checkbox" id="menu-open" class="menu-open" name="menu-open" />
           <label for="menu-open" class="menu-open-button">
@@ -56,31 +56,33 @@
 
   <div class="avatar-members">
 
-    <div class="about-card">
+    <div class="about-card" data-controller="tab">
 
       <ul class="list-inline tabs-underlined">
-        <li class="active d-flex justify-content-center align-items-center">
+        <li class="active d-flex justify-content-center align-items-center"  data-action="click->tab#change">
           <a href="" class="tab-underlined active" data-tab="about">About the group</a>
         </li>
-        <li  class=" d-flex  justify-content-center align-items-center">
+        <li  class=" d-flex  justify-content-center align-items-center"  data-action="click->tab#change">
           <a href="" class="tab-underlined" data-tab="events">Events</a>
         </li>
-        <li  class=" d-flex  justify-content-center align-items-center">
+        <li  class=" d-flex  justify-content-center align-items-center" data-action="click->tab#change">
           <a href="" class="tab-underlined" data-tab="discussions">Discussions</a>
         </li>
-        <li  class=" d-flex justify-content-center align-items-center">
+        <li  class=" d-flex justify-content-center align-items-center" data-action="click->tab#change">
           <a href="" class="tab-underlined" data-tab="plus">Plus</a>
         </li>
       </ul>
 
-      <div class="tab-content">
+      <div class="tab-content" >
 
         <div id="about" class="tab-pane active">
           <p> <%= @group.description %> </p>
         </div>
+
         <div id="events" class="tab-pane">
           <%= render "event", meetings: @meetings %>
         </div>
+
          <div id="discussions" class="tab-pane" data-controller="post">
             <%= simple_form_for([@group, @post], html: { "data-post-target": "form", class: "discussion-form"}) do |f| %>
               <%= f.input :content, input_html: { data: {post_target: "content"}}%>
@@ -98,31 +100,6 @@
         <div id="plus" class="tab-pane">
           <p> This is the plus tab plus.</p>
         </div>
-
-        <script>
-          const tabLi = document.querySelectorAll('.tabs-underlined li');
-          const tabLinks = document.querySelectorAll('.tab-underlined');
-          const tabContents = document.querySelectorAll('.tab-pane');
-
-          tabLinks.forEach((link) => {
-            link.addEventListener('click', (e) => {
-              e.preventDefault();
-              const selected = link.dataset.tab;
-              tabLi.forEach((link) => {
-                link.classList.remove('active');
-              });
-              tabLinks.forEach((link) => {
-                link.classList.remove('active');
-              });
-              tabContents.forEach((tab) => {
-                tab.classList.remove('active');
-              });
-              link.classList.add('active');
-              link.parentNode.classList.add('active');
-              document.getElementById(selected).classList.add('active');
-            });
-          });
-        </script>
 
       </div>
 

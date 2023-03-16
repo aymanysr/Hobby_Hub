@@ -24,3 +24,6 @@ application.register("share", ShareController)
 
 import ShowController from "./show_controller"
 application.register("show", ShowController)
+
+import TabController from "./tab_controller"
+application.register("tab", TabController)
