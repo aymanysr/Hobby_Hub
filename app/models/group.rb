@@ -6,6 +6,7 @@ class Group < ApplicationRecord
   has_many :users, through: :user_groups
   has_many :posts, dependent: :destroy
   has_one_attached :photo
+  has_many :meetings
 
   def category_name
     category.name

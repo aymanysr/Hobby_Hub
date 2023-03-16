@@ -1,6 +1,4 @@
-<div class="container mt-5 text-center">
-  <p>Find me in app/views/meetings/index.html.erb</p>
-  <%= month_calendar(events: @meetings, end_attribute: :end_time) do |date, meetings| %>
+  <%= month_calendar(events: meetings, end_attribute: :end_time) do |date, meetings| %>
     <div class="day">
       <%= date %>
     </div>
@@ -19,12 +17,8 @@
 
       <div class="card-footer">
         <p class="card-text">
-        On <%= meeting.start_time.strftime('%A, %B %d, %Y at %I:%M %p') %>
-        </p>
-        <p class="card-text">
-        To: <%= meeting.end_time.strftime('%A, %B %d, %Y at %I:%M %p') %>
+        On: <%= meeting.start_time.strftime('%A, %B %d, %Y at %I:%M %p') %>
         </p>
       </div>
     <% end %>
   <% end %>
-</div>
