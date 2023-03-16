@@ -549,8 +549,8 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
 
   .back_to_groups {
     position: absolute;
-    left: 1196px;
-    top: 829px;
+    left: 1197px;
+    top: 852px;
     right: 0;
   }
 
@@ -565,7 +565,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
   }
 
   .back-t:hover {
-    background-color: #fff;
+    background-color: transparent;
     color: #007bff;
   }
 
