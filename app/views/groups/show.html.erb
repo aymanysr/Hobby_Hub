@@ -26,52 +26,28 @@
         <p><em>Public</em></p>
 
       <div class="wrapper">
-
-        <nav class="menuShare">
-
+        <nav class="menuShare" data-controller="share">
           <input type="checkbox" id="menu-open" class="menu-open" name="menu-open" />
           <label for="menu-open" class="menu-open-button">
             <i class="fa fa-share-alt share-icon"></i>
           </label>
-                <a href="" class="menu-item facebook_share_btn"
-                  data-open-share="facebook"
-                  data-open-share-link="https://hobby-hub.herokuapp.com/">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="" class="menu-item instagram_plus_share_btn"
-                  data-open-share="instagram"
-                  data-open-share-url="https://hobby-hub.herokuapp.com/">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="" class="menu-item twitter_share_btn"
-                  data-open-share="twitter"
-                  data-open-share-url="https://hobby-hub.herokuapp.com/"
-                  data-open-share-title="Hobby-HoB">
-                  <i class="fab fa-twitter"></i>
-                </a>
-
-          </nav>
-           <script>
-            const facebookShareBtn = document.querySelector('.facebook_share_btn');
-            facebookShareBtn.addEventListener('click', () => {
-              const link = facebookShareBtn.getAttribute('data-open-share-link');
-              window.open(`https://www.facebook.com/sharer/sharer.php?u=${link}`);
-            });
-
-            const instagramShareBtn = document.querySelector('.instagram_plus_share_btn');
-            instagramShareBtn.addEventListener('click', () => {
-              const url = instagramShareBtn.getAttribute('data-open-share-url');
-              window.open(`https://www.instagram.com/?url=${url}`);
-            });
-
-            const twitterShareBtn = document.querySelector('.twitter_share_btn');
-            twitterShareBtn.addEventListener('click', () => {
-              const url = twitterShareBtn.getAttribute('data-open-share-url');
-              const title = twitterShareBtn.getAttribute('data-open-share-title');
-              window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`);
-            });
-        </script>
-
+          <a href="" class="menu-item facebook_share_btn"
+            data-open-share="facebook"
+            data-open-share-link="https://hobby-hub.herokuapp.com/">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="menu-item instagram_plus_share_btn"
+            data-open-share="instagram"
+            data-open-share-url="https://hobby-hub.herokuapp.com/">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="menu-item twitter_share_btn"
+            data-open-share="twitter"
+            data-open-share-url="https://hobby-hub.herokuapp.com/"
+            data-open-share-title="Hobby-HoB">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </nav>
       </div>
 
     </div>
