@@ -4,7 +4,7 @@
     <% @groups.each do |group| %>
       <div class="card">
         <div class="card-image">
-          <%= cl_image_tag group.photo.key, width: 150, height: 150, crop: :thumb %>
+          <%= cl_image_tag group.photo.key, crop: :fit %>
         </div>
         <div class="card-title">
           <h3><strong><%= group.title %></strong></h3>
