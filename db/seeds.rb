@@ -157,6 +157,21 @@ user3 = User.new(
 user3.avatar.attach(io: pfp3, filename: "pfp3.jpg", content_type: "image/jpg")
 user3.save
 
+# User Emma
+pfp3 = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678460821/pfp3_knxuwn.jpg")
+user3 = User.new(
+  nickname: "Emmsi",
+  first_name: "Emma",
+  last_name: "Ruenzel",
+  email: "emma@test.com",
+  bio: "I'm Emma, but you can call me Davey.",
+  gender: "Female",
+  birthdate: Faker::Date.birthday(min_age: 25, max_age: 26),
+  password: PASSWORD
+)
+user3.avatar.attach(io: pfp3, filename: "pfp3.jpg", content_type: "image/jpg")
+user3.save
+
 # User 4
 pfp4 = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678460821/pfp4_iaze5n.jpg")
 user4 = User.new(
