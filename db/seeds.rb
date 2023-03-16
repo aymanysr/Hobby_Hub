@@ -108,6 +108,10 @@ coding = Category.create!(
   name: "Coding"
 )
 
+otaku = Category.create!(
+  name: "Otaku"
+)
+
 PASSWORD = "123456"
 
 puts "creating living human beings and totally not random names put on a random picture"
@@ -264,7 +268,7 @@ user9.save
 
 puts "creating groups"
 
-coding_file = URI.open("https://i.pinimg.com/564x/c6/5d/41/c65d41095846c3ced34638f8d2009518.jpg")
+coding_file = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678971099/ec4162fdde879115b2f452da3f668a4c_o4hpmz.jpg")
 group1 = Group.new(
   title: "Dev Meetup",
   description: "Join our group if you're interested in coding! We're a group of passionate developers who meet up to work on projects, share tips and tricks, and discuss the latest trends in software development.",
@@ -276,7 +280,7 @@ group1 = Group.new(
 group1.photo.attach(io: coding_file, filename: "coding1.jpg", content_type: "image/jpg")
 group1.save!
 
-boarding_file = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678461415/boarding1_ubzfww.jpg")
+boarding_file = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678971099/1f69dea7640e8491199a83280fa87f8f_usu2rf.jpg")
 group2 = Group.new(
   title: "Boarding club",
   description: "If you're a fan of board games, this is the group for you! We meet up regularly to play games like Settlers of Catan, Ticket to Ride, and more. All skill levels are welcome!",
@@ -287,7 +291,7 @@ group2 = Group.new(
 group2.photo.attach(io: boarding_file, filename: "board_games1.jpg", content_type: "image/jpg")
 group2.save
 
-photography_file = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678461415/photography1_qbqvgx.jpg")
+photography_file = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678971099/4197528f344e1553b66a4694eb94c65c_gebxf3.jpg")
 group3 = Group.new(
   title: "Capture this world's beauty~!",
   description: "Are you interested in photography? Come join our group and meet other like-minded individuals who share your passion! We go on photo walks, hold workshops, and share our work with each other.",
@@ -298,7 +302,7 @@ group3 = Group.new(
 group3.photo.attach(io: photography_file, filename: "photography1.jpg", content_type: "image/jpg")
 group3.save
 
-hiking_file = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678461415/hiking1_vbfhav.jpg")
+hiking_file = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678971099/693e4554c11fe983267c31c3bcdc1648_zii6ap.jpg")
 group4 = Group.new(
   title: "Trailblazers",
   description: "Looking to explore the great outdoors? Join our hiking group and discover the beauty of Morocco's natural landscapes! We organize hikes of various difficulty levels, from easy walks to challenging treks.",
@@ -309,7 +313,7 @@ group4 = Group.new(
 group4.photo.attach(io: hiking_file, filename: "hiking1.jpg", content_type: "image/jpg")
 group4.save
 
-cooking_file = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678461415/cooking1_hv9xfm.jpg")
+cooking_file = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678971099/8f0ccc8a2945f6949df175447b9f2b2e_htnxqf.jpg")
 group5 = Group.new(
   title: "The Tangier Tasters",
   description: "Calling all foodies! Join us to explore the best of Tangier's culinary scene.",
@@ -319,6 +323,83 @@ group5 = Group.new(
 )
 group5.photo.attach(io: cooking_file, filename: "cooking1.jpg", content_type: "image/jpg")
 group5.save
+
+writing_file = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678971098/5fffd37939af07c41090f6ab6c5bf856_ejpsml.jpg")
+group6 = Group.new(
+  title: "Essaouira Writers",
+  description: "Calling all writers in Essaouira! Whether you're a beginner or an experienced author, this group is for you. We meet up to share our work, offer feedback, and discuss the craft of writing.",
+  user: user1,
+  city: essaouira,
+  category: creative_writing
+)
+group6.photo.attach(io: writing_file, filename: "writing1.jpg", content_type: "image/jpg")
+group6.save
+
+art_file = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678971098/35546396a7b54fead848814e52aa66ed_afeyiw.jpg")
+group7 = Group.new(
+  title: "Fez Art Society",
+  description: "The Fez Art Society is a group of artists who meet up to share their work, get feedback, and discuss all things art. If you're an artist or just appreciate art, join us!",
+  user: user5,
+  city: fez,
+  category: art_painting
+)
+group7.photo.attach(io: art_file, filename: "art1.jpg", content_type: "image/jpg")
+group7.save
+
+language_file = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678971098/803ba6b902da82d72cda2801cbffd60d_noeidu.jpg")
+group8 = Group.new(
+  title: "Agadir Language Exchange",
+  description: "The Agadir Language Exchange is a group of language learners and speakers who come together to practice and improve their language skills. Whether you're a beginner or an advanced learner, come join us and practice speaking with native speakers!",
+  user: user6,
+  city: agadir,
+  category: language_exchange
+  )
+group8.photo.attach(io: language_file, filename: "language1.jpg", content_type: "image/jpg")
+group8.save
+
+music_file = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678971099/bdc070b00b55ff63e2adde80ebcbea95_g2qgdy.jpg")
+group9 = Group.new(
+  title: "Safi Music Lovers",
+  description: "Safi Music Lovers is a group of music enthusiasts who come together to share their love for music. We discuss different genres of music, share our favorite songs, and attend concerts and music festivals. If you're a music lover, join us and let's celebrate music together!",
+  user: user7,
+  city: safi,
+  category: music
+)
+group9.photo.attach(io: music_file, filename: "music1.jpg", content_type: "image/jpg")
+group9.save
+
+yoga_file = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678971099/29a0d4cb8c572c4d26b39ecbbb20b1b5_xuioe6.jpg")
+group10 = Group.new(
+  title: "Salé Yoga and Meditation",
+  description: "The Salé Yoga and Meditation group is for anyone interested in practicing yoga and meditation in a supportive and welcoming environment. Join us to improve your health and wellbeing!",
+  user: user2,
+  city: salé,
+  category: yoga_meditation
+)
+group10.photo.attach(io: yoga_file, filename: "yoga1.jpg", content_type: "image/jpg")
+group10.save
+
+gaming_file = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678971099/076439673934654ad06f785a708bb0c1_zpexvy.jpg")
+group11 = Group.new(
+  title: "Tetouan Gamers",
+  description: "Tetouan Gamers is a group for anyone who loves playing games of all kinds - console, PC, tabletop, and more. Come meet new friends, share tips and tricks, and discover new games!",
+  user: user4,
+  city: tetouan,
+  category: gaming
+)
+group11.photo.attach(io: gaming_file, filename: "gaming1.jpg", content_type: "image/jpg")
+group11.save
+
+otaku_file = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678971099/453fcb7889d6be48cf79537333a201c1_ho4kcl.jpg")
+group12 = Group.new(
+  title: "Meknes Otaku Club",
+  description: "The Meknes Otaku Club is a group for fans of anime, manga, and all things otaku. Come join us to discuss your favorite shows, cosplay, and attend conventions!",
+  user: user6,
+  city: meknes,
+  category: otaku
+)
+group12.photo.attach(io: otaku_file, filename: "otaku1.jpg", content_type: "image/jpg")
+group12.save
 
 puts "making up posts"
 
