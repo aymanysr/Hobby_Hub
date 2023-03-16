@@ -156,7 +156,7 @@
       <div class="avatar-group-card">
 
         <div class="join-btn">
-            <% if UserGroup.pluck(:user_id).include?(current_user.id) %>
+            <% if @group.users.pluck(:id).include?(current_user.id) %>
               <form action="/leave_group" method="PUT" id="leave-form">
                 <input type="submit" class="bttnn d-flex justify-content-center" value="Leave Group">
                 <input type="hidden" name="group_id" value="<%= @group.id %>">
