@@ -17,32 +17,13 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.new(meeting_params)
     @meeting.user_id = current_user.id
     @meeting.group = Group.find(params[:group_id])
-    if @meeting.save!
+    if @meeting.save
       redirect_to group_path(params[:group_id]), notice: 'Event was successfully created.'
     else
       render :new
     end
   end
-  # def create
-  #   @group = Group.new(group_params)
-  #   @group.user_id = current_user.id
-  #   if @group.save!
-  #     redirect_to @group, notice: 'Group was successfully created.'
-  #   else
-  #     render :new
-  #   end
-  #   authorize @group
-  # end
-  # def create
-  #   @post = Post.new(post_params)
-  #   @post.user_id = current_user.id
-  #   @post.group_id = params["group_id"]
-  #   if @post.save!
-  #     redirect_to group_path(@post.group_id), notice: 'Post was successfully created.'
-  #   else
-  #     render :new
-  #   end
-  # end
+
   def show
     @meeting = Meeting.find(params[:id])
     @group = Group.new
