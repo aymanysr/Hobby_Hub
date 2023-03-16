@@ -61,13 +61,14 @@ form[data-search-groups-target="form"] {
     margin-bottom: 0.5rem;
     overflow: hidden;
     position: relative;
-
+    height: 190px;
     .card-image {
       width: 30%;
+      height: 100%;
 
       img {
         width: 100%;
-        height: auto;
+        height: 100%;
         object-fit: cover;
         object-position: center;
         border-radius: 25px 75px 75px 25px;
@@ -91,7 +92,7 @@ form[data-search-groups-target="form"] {
       padding: 0.5rem 1rem;
       background-color: #ff4014;
       border: none;
-      border-radius: 5px 5px 25px 5px;
+      border-radius: 5px 0px 25px 0px;
       color: white;
       font-size: 1.2rem;
       transition: background-color 0.3s ease-in-out;
