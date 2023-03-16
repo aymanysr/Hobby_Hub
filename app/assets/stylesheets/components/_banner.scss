@@ -3,7 +3,9 @@
     background-size: cover;
     background-position: center;
     padding: 150px 0;
-
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
   }
   span{
     color: #ff4b01;
@@ -14,6 +16,16 @@
     right: 8%;
     bottom: 0;
     margin-bottom: 170px;
+  }
+  .container-tr {
+    grid-column: 1 / 2;
+  }
+  .image-container {
+    grid-column: 2 / 3;
+  }
+
+  .pict {
+    height: auto;
   }
   .container-tr h1 {
     margin: 0;

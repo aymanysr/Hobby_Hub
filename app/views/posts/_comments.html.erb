@@ -1,3 +1,19 @@
-<% post.comments.each do |comment| %>
-<%= comment.content %>
-<% end %>
+<div class="comments-container">
+    <% @post.comments.reverse.each do |comment| %>
+          <!-- Avatar -->
+
+          <%= cl_image_tag comment.user.avatar.key, class: "comment-avatar", width: 42, height: 42, crop: :thumb, gravity: :face %>
+          <!-- Contenedor del Comentario -->
+          <div class="comment-box">
+            <div class="comment-head">
+              <h6 class="comment-name"><%= comment.user.nickname %></h6>
+              <span><%= time_ago_in_words(comment.created_at) %> ago</span>
+              <i class="fa fa-reply"></i>
+              <i class="fa fa-heart"></i>
+            </div>
+            <div class="comment-content">
+              <%= comment.content %>
+            </div>
+          </div>
+    <% end %>
+</div>

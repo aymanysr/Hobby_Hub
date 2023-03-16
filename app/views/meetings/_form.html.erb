@@ -1,22 +1,24 @@
-<div class="card">
-  <div class="card-body">
-    <%= simple_form_for([@group, @meeting]) do |f| %>
+ <div id="prof">
+  <div class="card ">
+    <div  class="card-body">
+      <%= simple_form_for([@group, @meeting]) do |f| %>
 
-      <div class="card-title">
-        <%= f.input :name %>
-      </div>
-      <div class="card-text">
-        <%= f.input :description, as: :text, input_html: { style: "display: block" } %>
-      </div>
-      <div class="card-text">
-        <%= f.input :start_time, as: :date, input_html: { style: "display: block" } %>
-      </div>
-      <div class="card-text">
-        <%= f.input :end_time, as: :date, input_html: { style: "display: block" } %>
-      </div>
-      <button class="btn btn-outline-warning">
-        <%= f.button :submit, input_html: { style: "display: block" } %>
-      </button>
-    <% end %>
+        <div class="card-title">
+          <%= f.input :name %>
+        </div>
+        <div class="card-text">
+          <%= f.input :description, as: :text, input_html: { style: "display: block" } %>
+        </div>
+        <div class="card-text">
+          <%= f.input :start_time, as: :date, input_html: { style: "display: block" } %>
+        </div>
+        <div class="card-text">
+          <%= f.input :end_time, as: :date, input_html: { style: "display: block" } %>
+        </div>
+        <button id="na">
+          <%= f.button :submit, input_html: { style: "display: block" } %>
+        </button>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -107,16 +107,16 @@
         </div>
          <div id="discussions" class="tab-pane" data-controller="post">
             <%= simple_form_for([@group, @post], html: { "data-post-target": "form", class: "discussion-form"}) do |f| %>
-            <%= f.input :content, input_html: { data: {post_target: "content"}}%>
-            <%= f.file_field :photo, class: "form-control" %>
-            <input data-action="click->post#post" type="submit" name="commit" value="Create Post" data-disable-with="Create Post">
+              <%= f.input :content, input_html: { data: {post_target: "content"}}%>
+               <%= f.label :photo %>
+              <%= f.file_field :photo, class: "form-control" %>
+              <input data-action="click->post#post" type="submit" name="commit" value="Create Post" data-disable-with="Create Post">
             <% end %>
 
           <div class="posts-container" data-post-target="posts">
             <%= render "posts" , group: @group %>
           </div>
          </div>
-
 
 
         <div id="plus" class="tab-pane">
@@ -156,51 +156,51 @@
       <div class="avatar-group-card">
 
         <div class="join-btn">
-          <% if UserGroup.pluck(:user_id).include?(current_user.id) %>
-              <form action="/leave_group" method="PUT">
-              <input type="submit" class="bttnn d-flex justify-content-center" value="Leave Group">
-              <input type="hidden" name="group_id" value="<%= @group.id %>">
-            </form>
-          <% else %>
-            <form action="/join_group" method="PUT">
-              <input type="submit" class="bttnn d-flex justify-content-center" value="Join Group">
-              <input type="hidden" name="group_id" value="<%= @group.id %>">
-            </form>
-          <% end %>
-        </div>
+            <% if @group.users.pluck(:id).include?(current_user.id) %>
+              <form action="/leave_group" method="PUT" id="leave-form">
+                <input type="submit" class="bttnn d-flex justify-content-center" value="Leave Group">
+                <input type="hidden" name="group_id" value="<%= @group.id %>">
+              </form>
+            <% else %>
+              <form action="/join_group" method="PUT">
+                <input type="submit" class="bttnn d-flex justify-content-center" value="Join Group">
+                <input type="hidden" name="group_id" value="<%= @group.id %>">
+              </form>
+            <% end %>
+          </div>
+
+          <script>
+            document.getElementById("leave-form").addEventListener("submit", function(event) {
+              if (!confirm("Are you sure to leave this group?")) {
+                event.preventDefault();
+              }
+            });
+          </script>
+
 
         <h3 class="avatar-card-title">Members</h3>
 
         <div class="avatar-group">
 
-          <div class="avatar">
-            <img src="https://i.pinimg.com/236x/a3/ac/1e/a3ac1ed5abaedffd9947face7901e14c.jpg" alt="Image">
-            <span class="avatar-name">Someone</span>
-          </div>
-
-          <div class="avatar">
-            <img src="https://www.sylvain-renard.com/wp-content/uploads/2017/05/SR20160129-623.jpg" alt="Image">
-            <span class="avatar-name">Sometwo</span>
-          </div>
-
-          <div class="avatar">
-            <img src="https://images.unsplash.com/photo-1606122017369-d782bbb78f32?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydHJhaXRzfGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="Image">
-            <span class="avatar-name">Sometree</span>
-          </div>
-
-          <div class="avatar">
-            <img src="https://img.freepik.com/photos-gratuite/jeune-femme-reveuse-lunettes-soleil-avant_197531-16739.jpg" alt="Image">
-            <span class="avatar-name">Somefour</span>
-          </div>
+          <% @group.users.take(5).each do |user| %>
+            <div class="avatar">
+              <%= cl_image_tag user.avatar.key %>
+              <span class="avatar-name"><%= user.nickname %></span>
+            </div>
+          <% end %>
 
         </div>
 
         <div class="avatar-btn">
-            <small class="cardd-members"> <a href="" class="btn"> +99 members... See All!</a></small>
+            <small class="cardd-members">
+            <a href="" class="btn">+<%= @group.users.length + 1 %> members... See All!</a>
+            </small>
+        </div>
+        <div>
         </div>
 
       </div>
-
-  </div>
-
+      <div class="back_to_groups">
+        <%= link_to "Back to Groups", groups_path, class: "back-t text-end" %>
+      </div>
 </div>

@@ -157,6 +157,21 @@ user3 = User.new(
 user3.avatar.attach(io: pfp3, filename: "pfp3.jpg", content_type: "image/jpg")
 user3.save
 
+# User Emma
+pfp3 = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678460821/pfp3_knxuwn.jpg")
+user3 = User.new(
+  nickname: "Emmsi",
+  first_name: "Emma",
+  last_name: "Ruenzel",
+  email: "emma@test.com",
+  bio: "I'm Emma, but you can call me Davey.",
+  gender: "Female",
+  birthdate: Faker::Date.birthday(min_age: 25, max_age: 26),
+  password: PASSWORD
+)
+user3.avatar.attach(io: pfp3, filename: "pfp3.jpg", content_type: "image/jpg")
+user3.save
+
 # User 4
 pfp4 = URI.open("https://res.cloudinary.com/dlgrirjkk/image/upload/v1678460821/pfp4_iaze5n.jpg")
 user4 = User.new(
@@ -307,6 +322,7 @@ group5.save
 
 puts "making up posts"
 
+# post 1
 user = User.find(rand(1..User.count))
 Post.create!(
   content: "Hey everyone,
@@ -321,6 +337,7 @@ Post.create!(
   group_id: group1.id
 )
 
+# post 2
 user = User.find(rand(1..User.count))
 Post.create!(
   content: "Hey everyone,
@@ -335,6 +352,7 @@ Post.create!(
   group_id: group1.id
 )
 
+# post 3
 user = User.find(rand(1..User.count))
 Post.create!(
   content: "Hi everyone,
@@ -349,6 +367,7 @@ Post.create!(
   group_id: group1.id
 )
 
+# post 4
 user = User.find(rand(1..User.count))
 Post.create!(
   content: "Hello everyone,
@@ -362,6 +381,7 @@ Post.create!(
   group_id: group2.id
 )
 
+# post 5
 user = User.find(rand(1..User.count))
 Post.create!(
   content: "Hey everyone,
@@ -375,6 +395,7 @@ Post.create!(
   group_id: group2.id
 )
 
+# post 6
 user = User.find(rand(1..User.count))
 Post.create!(
   content: "Hi everyone,
@@ -389,6 +410,7 @@ Post.create!(
   group_id: group2.id
 )
 
+# post 7
 image_url = "https://res.cloudinary.com/dlgrirjkk/image/upload/v1678784782/photography_post_vdh06e.jpg"
 image_file = URI.open(image_url)
 user = User.find(rand(1..User.count))
@@ -406,6 +428,7 @@ post = Post.new(
 post.photo.attach(io: image_file, filename: "sunset.jpg", content_type: "image/jpg")
 post.save
 
+# post 8
 user = User.find(rand(1..User.count))
 Post.create!(
   content: "Hello fellow photographers,
@@ -419,6 +442,7 @@ Post.create!(
   group_id: group3.id
 )
 
+# post 9
 user = User.find(rand(1..User.count))
 Post.create!(
   content: "Hey everyone,
@@ -433,6 +457,7 @@ Post.create!(
   group_id: group3.id
 )
 
+# post 10
 Post.create!(
   content: "Yesterday's hike with Trailblazers was amazing!
   We explored the beautiful Rif Mountains and saw stunning views of the surrounding valleys.
@@ -442,6 +467,7 @@ Post.create!(
   group_id: group4.id
 )
 
+# post 11
 Post.create!(
   content: "Hey Trailblazers, I'm planning a hike for next weekend and I'd love some company!
   We'll be exploring the Akchour Waterfalls and it's going to be a moderate level trek.
@@ -450,6 +476,7 @@ Post.create!(
   group_id: group4.id
 )
 
+# post 12
 Post.create!(
   content: "I just wanted to share a quick thank you to the Trailblazers community!
   When I first joined the group, I was nervous about joining hikes because I'm not the most experienced hiker.
@@ -460,6 +487,7 @@ Post.create!(
   group_id: group4.id
 )
 
+# post 13
 Post.create!(
   content: "Hey Tangier Tasters! I just tried the most amazing seafood paella at a local restaurant and I can't stop thinking about it.
             Who's up for trying it out together this weekend? Let's make it a group outing!",
@@ -467,12 +495,253 @@ Post.create!(
   group_id: group5.id
 )
 
+# post 14
 Post.create!(
   content: "I've been experimenting with Moroccan cuisine lately and I just made the best tagine I've ever had!
             I used a mix of spices I bought from the souk and slow-cooked it for hours.
             If anyone's interested, I'm happy to share the recipe and maybe we can try cooking it together sometime.",
   user_id: rand(1..User.count),
   group_id: group5.id
+)
+
+puts "making up fak- I mean actual comments for the first post"
+# Comment 1:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "Thanks for sharing this update! Looking forward to attending the meetup and learning about the latest front-end development trends and techniques.",
+  user_id: user.id,
+  post_id: 1
+)
+
+# Comment 2:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "This sounds like a great opportunity to connect with other developers in the community and learn from experts in the field. Thanks for organizing!",
+  user_id: user.id,
+  post_id: 1
+)
+
+# Comment 3:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "I've been waiting for an event like this! Can't wait to hear from the speakers and network with other developers. Thanks for the update!",
+  user_id: user.id,
+  post_id: 1
+)
+
+puts "making up actual comments for the second post"
+
+# Comment 1:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "This sounds like a really interesting challenge! I've been looking for a new project to work on, so I would definitely be interested in hearing more about it.",
+  user_id: user.id,
+  post_id: 2
+)
+
+# Comment 2:
+user = User.find(rand(1..User.count))
+Comment.create!(
+content: "I've been trying to learn React, and this seems like a fun way to practice my skills. Would love to hear more about the challenge!",
+user_id: user.id,
+post_id: 2
+)
+
+# Comment 3:
+user = User.find(rand(1..User.count))
+  Comment.create!(
+  content: "Thanks for sharing this! I'm always on the lookout for new coding challenges, and this one seems really interesting.",
+  user_id: user.id,
+  post_id: 2
+)
+puts "making up actual comments for the third post"
+
+# Comment 1:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "Congratulations on landing your first job! It's always great to hear success stories like yours. Do you have any tips for someone who's just starting out in their job search?",
+  user_id: user.id,
+  post_id: 3
+)
+
+# Comment 2:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "That's amazing news! I remember how exciting it was when I landed my first job in software development. Enjoy the ride!",
+  user_id: user.id,
+  post_id: 3
+)
+
+# Comment 3:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "Congratulations on this major milestone! It takes a lot of hard work and dedication to make it in this field, and you should be proud of yourself. Best of luck in your new job!",
+  user_id: user.id,
+  post_id: 3
+)
+
+puts "Making up 4 comments 4 the 4th post!!!!"
+
+# Comment 1:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "I've heard a lot of good things about Azul! I've never played it before, but I'd be interested in learning.",
+  user_id: user.id,
+  post_id: 4
+)
+
+# Comment 2:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "Sounds like a fun game! I'm always up for trying new board games, so count me in!",
+  user_id: user.id,
+  post_id: 4
+)
+
+# Comment 3:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "Thanks for sharing! I'm not really into board games, but I appreciate the invite. Hope you all have fun!",
+  user_id: user.id,
+  post_id: 4
+)
+
+# Comment 4:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "I've played Azul before and it's a great game! I'd love to play it again and teach others how to play.",
+  user_id: user.id,
+  post_id: 4
+)
+
+puts "making up comments for the 5th post..."
+# comment 1
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "Thank you for the warm welcome! I'm really looking forward to meeting everyone and trying out some new games.",
+  user_id: user.id,
+  post_id: 5
+)
+
+# comment 2
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "I second that! I'm excited to be a part of this group and can't wait to see what games everyone recommends.",
+  user_id: user.id,
+  post_id: 5
+)
+puts "comments for post 6..."
+# Comment 1:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "Welcome to the group! I'm glad you found us and I hope you enjoy playing some games with us soon.",
+  user_id: user.id,
+  post_id: 6
+)
+
+# Comment 2:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "I'll definitely be there this weekend! I'm bringing my copy of Settlers of Catan if anyone wants to play.",
+  user_id: user.id,
+  post_id: 6
+)
+
+puts "comments for post 7?.."
+
+# Comment 1:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "Wow, that's a beautiful photo! The colors are so vibrant and the composition is great. Thanks for sharing!",
+  user_id: user.id,
+  post_id: 7
+)
+
+# Comment 2:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "I love sunsets, and this one is amazing! I especially like how you captured the reflection of the sun on the water. Great job!",
+  user_id: user.id,
+  post_id: 7
+)
+
+# Comment 3:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "Thanks for sharing this beautiful photo! It's inspiring me to get out and take some photos myself. Can't wait to see more of your work!",
+  user_id: user.id,
+  post_id: 7
+)
+
+puts "making up comments for post number:"
+puts "8"
+
+# Comment 1:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "I'm really looking forward to this workshop! I've been wanting to improve my portrait photography skills for a while now.",
+  user_id: user.id,
+  post_id: 8
+)
+
+# Comment 2:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "Thanks for organizing this workshop! I'm still fairly new to photography, so I'm excited to learn some new techniques.",
+  user_id: user.id,
+  post_id: 8
+)
+
+puts "9"
+
+# Comment 1:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "This sounds like a fun challenge! I love finding reflections in unexpected places, so I'm excited to participate.",
+  user_id: user.id,
+  post_id: 9
+)
+
+# Comment 2:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "Thanks for the challenge! I'm not the most skilled photographer, but I'll give it a shot. Looking forward to seeing everyone's photos!",
+  user_id: user.id,
+  post_id: 9
+)
+
+puts "1 comment for the 10th post because 0s don't exist"
+# comment 1
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "Wow, that sounds like an incredible experience! I've always wanted to go hiking in the mountains, especially somewhere as beautiful as the Rif Mountains. I'll have to check out Trailblazers and see if I can join you all on the next hike!",
+  user_id: user.id,
+  post_id: 10
+)
+
+puts "creating comments for the post 11"
+# Comment 1:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "I've always wanted to visit the Akchour Waterfalls! Count me in, I'm excited for this hike.",
+  user_id: user.id,
+  post_id: 11
+)
+
+# Comment 2:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "I'm definitely interested in joining! Just let me know what time and where to meet.",
+  user_id: user.id,
+  post_id: 11
+)
+
+# Comment 3:
+user = User.find(rand(1..User.count))
+Comment.create!(
+  content: "Sounds like a great hike, but unfortunately I won't be able to make it this time. Have fun everyone!",
+  user_id: user.id,
+  post_id: 11
 )
 # thisisatest = UserGroup.create!(
 #   user: sometwo,
