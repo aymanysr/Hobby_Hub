@@ -17,7 +17,7 @@
         <div class ="iconss">
 
             <span class="icon"><i id="i-t" class="fa-solid fa-location-dot"></i> <%= @group.city.name  %></span>
-            <span class="icon"><i id="i-t" class="fa-regular fa-message"></i> +<%= rand(20..50)%> Recent posts</span>
+            <span class="icon"><i id="i-t" class="fa-regular fa-message"></i> +<%= @group.posts.count%> Recent posts</span>
         </div>
 
         <h2 class="title"><i class="fas fa-thumbs-up"></i> <%= @group.title %></h2>
