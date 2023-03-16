@@ -45,6 +45,114 @@
 
 }
 // #rf{
+  .card-s {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+  }
+  .card-s:hover {
+    width: 600px;
+    transition-delay: 0.5s;
+  }
+  .card-s .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-s .circle::before {
+    content: "";
+    position: absolute;
+    top: 30;
+    left: 2;
+    right: 2;
+    width: 470px;
+    height: 470px;
+    border-radius: 50%;
+    background: #191919;
+    border: 8px solid var(--clr);
+    filter: drop-shadow(0 0 10px var(--clr)) drop-shadow(0 0 60px var(--clr));
+    transition: 0.5s, background 0.5s;
+    transition-delay: 0.75s, 1s;
+  }
+  .card-s:hover .circle::before {
+    transition-delay: 0.5s;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: var(--clr);
+  }
+  .card-s .circle .logo {
+    position: relative;
+    width: 250px;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+  }
+  .card-s:hover .circle .logo {
+    transform: scale(0);
+    transition-delay: 0s;
+  }
+  .card-s .product_img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0) rotate(315deg);
+    height: 300px;
+    transition: 0.5s ease-in-out;
+  }
+  .card-s:hover .product_img {
+    transition-delay: 0.75s;
+    top: 55%;
+    left: 82%;
+    height: 320px;
+    transform: translate(-50%, -50%) scale(1) rotate(15deg);
+  }
+  .card-s .content {
+    position: absolute;
+    width: 60%;
+    left: 10%;
+    padding: 20px 20px 20px 20px;
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+  }
+  .card-s:hover .content {
+    transition-delay: 0.75s;
+    opacity: 1;
+    visibility: visible;
+    left: 3px;
+    margin-top: 15px;
+  }
+  .card-s .content h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2em;
+    line-height: 1.3em;
+  }
+  .card-s .content p {
+    color: #fff;
+  }
+  .card-s .content a {
+    position: relative;
+    color: #fff;
+    background: #222222;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 15px;
+  }
 
 //   padding: 10px 25px;
 //   background: #ff4b01;

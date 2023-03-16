@@ -1,11 +1,29 @@
 <% group.posts.reverse.each do |post| %>
-              <%= link_to group_smya_path(group, post) do %>
-              <div data-controller= "show">
-                <div class="postt-container" data-show-target="postt" id="post-<%= post.id %>">
-                  <i class="fa-regular fa-envelope"></i>
-                  <%= post.content %>
-                </div>
-                <button class="show-more" data-action="click->show#show" data-post-id="<%= post.id %>"><em>Show More &gt; </em></button>
-              </div>
-              <% end %>
+  <%= link_to group_smya_path(group, post) do %>
+
+    <div class="post-creator">
+      <div class= "pt-creator">
+        <%= cl_image_tag post.user.avatar.key, class: "avatar dropdown-toggle"%>
+      </div>
+      <div class="pt-creator">
+        Created by <%= post.user.nickname %>
+      </div>
+      <div class="pt-creator">
+        on <%= post.created_at.strftime('%B %dth, %Y - %H:%M %P') %>
+      </div>
+    </div>
+
+  <div data-controller= "show">
+
+    <div class="postt-container" data-show-target="postt" id="post-<%= post.id %>">
+
+      <i class="fa-regular fa-envelope"></i>
+      <%= post.content %>
+
+    </div>
+
+    <button class="show-more" data-action="click->show#show" data-post-id="<%= post.id %>"><em>Show More &gt; </em></button>
+
+  </div>
+  <% end %>
 <% end %>

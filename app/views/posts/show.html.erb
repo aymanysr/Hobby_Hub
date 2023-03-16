@@ -4,7 +4,7 @@
     <div class="col-8">
      <div id="post-show">
      <div class="la d-flex">
-           <%= cl_image_tag @post.user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+           <%= cl_image_tag @post.user.avatar.key, width: 42, height: 42, crop: :thumb, gravity: :face %>
 
           <p><%= @post.user.email %></p>
     </div>
@@ -31,14 +31,29 @@
                 </div>
               </div>
             </div>
-            <div class="bg-light p-2">
-                 <div class="d-flex flex-row align-items-start">
-                <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                    <textarea class=" form-control ml-1 shadow-none textarea"></textarea>
-                 </div>
-                 <div class=mt-2 text-right>
-                 <button class="btn btn-success btn-sm shadow-none" type="button"> Comment</button>
-                 </div>
+            <div class="bg-light p-2" data-controller="comment">
+
+            <%= simple_form_for([@post, Comment.new], html: { "data-comment-target": "form"}) do |f| %>
+            <%= f.input :content %>
+
+            <input data-action="click->comment#comment" type="submit" name="commit" value="Create Comment" data-disable-with="Create Comment">
+            <% end %>
+
+          <div class="comments-container" data-comment-target="comments">
+            <%= render "comments" , post: @post %>
+          </div>
+            <form action="/post_comment" method="POST" data-comment-target="form">
+
+              <div class="d-flex flex-row align-items-start">
+                <%= cl_image_tag current_user.avatar.key, width: 42, height: 42, crop: :thumb, gravity: :face %>
+                <textarea class=" form-control ml-1 shadow-none textarea"></textarea>
+              </div>
+              <div class=mt-2 text-right>
+                <button class="btn btn-success btn-sm shadow-none" type="button" data-action="click->comment#comment">Comment</button>
+              </div>
+              <div data-comment-target="comments">
+              </div>
+            </form>
             </div>
             </div>
      </div>

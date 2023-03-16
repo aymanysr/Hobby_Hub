@@ -1,5 +1,6 @@
 class Meeting < ApplicationRecord
   belongs_to :user
+  belongs_to :group
 
   validates :start_time, :end_time, presence: true
 

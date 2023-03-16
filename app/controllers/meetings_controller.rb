@@ -10,13 +10,15 @@ class MeetingsController < ApplicationController
 
   def new
     @meeting = Meeting.new
+    @group = Group.last
   end
 
   def create
     @meeting = Meeting.new(meeting_params)
     @meeting.user_id = current_user.id
+    @meeting.group = Group.find(params[:group_id])
     if @meeting.save!
-      redirect_to @meeting, notice: 'Meeting was successfully created.'
+      redirect_to group_path(params[:group_id]), notice: 'Event was successfully created.'
     else
       render :new
     end

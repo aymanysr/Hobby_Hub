@@ -60,6 +60,10 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @post = Post.new
+    start_date = params.fetch(:start_date, Date.today).to_date
+    @meetings = Meeting.where(
+      start_time: Time.now.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week
+    )
     authorize @group
   end
 
