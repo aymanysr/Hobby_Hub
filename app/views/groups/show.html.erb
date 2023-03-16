@@ -84,18 +84,21 @@
         </div>
 
          <div id="discussions" class="tab-pane" data-controller="post">
-            <%= simple_form_for([@group, @post], html: { "data-post-target": "form", class: "discussion-form"}) do |f| %>
-              <%= f.input :content, input_html: { data: {post_target: "content"}}%>
-               <%= f.label :photo %>
-              <%= f.file_field :photo, class: "form-control" %>
-              <input data-action="click->post#post" type="submit" name="commit" value="Create Post" data-disable-with="Create Post">
+            <% if @group.users.pluck(:id).include?(current_user.id) %>
+              <%= simple_form_for([@group, @post], html: { "data-post-target": "form", class: "discussion-form"}) do |f| %>
+                <%= f.input :content, input_html: { data: {post_target: "content"}}%>
+                <%= f.label :photo %>
+                <%= f.file_field :photo, class: "form-control" %>
+                <input data-action="click->post#post" type="submit" name="commit" value="Create Post" data-disable-with="Create Post">
             <% end %>
 
           <div class="posts-container" data-post-target="posts">
             <%= render "posts" , group: @group %>
           </div>
+          <% else %>
+            <span class="join-group-message" ><i class="fa-solid fa-triangle-exclamation ic2"></i>  You need to join the group first <i class="fa-regular fa-hand-point-right ic1"></i></span>
+          <% end %>
          </div>
-
 
         <div id="plus" class="tab-pane">
           <p> This is the plus tab plus.</p>
