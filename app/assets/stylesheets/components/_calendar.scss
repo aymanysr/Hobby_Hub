@@ -78,3 +78,36 @@ h1{
 
   text-decoration: none;
 }
+.area {
+  text-align: center;
+  font-size: 3.5em;
+  color: #fff;
+  letter-spacing: -7px;
+  font-weight: 400;
+  text-transform: uppercase;
+  animation: blur .75s ease-out infinite;
+  text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
+}
+
+@keyframes blur {
+  from {
+    text-shadow:0px 0px 10px #fff,
+      0px 0px 10px #060606,
+      0px 0px 25px #060606,
+      0px 0px 25px #060606,
+      0px 0px 25px #060606,
+      0px 0px 25px #060606,
+      0px 0px 25px #060606,
+      0px 0px 25px #060606,
+      0px 0px 50px #060606,
+      0px 0px 50px #060606,
+      0px 0px 50px #ff4b01,
+      0px 0px 150px #ff4b01,
+      0px 10px 100px #ff4b01,
+      0px 10px 100px #ff4b01,
+      0px 10px 100px #ff4b01,
+      0px 10px 100px #ff4b01,
+      0px -10px 100px #ff4b01,
+      0px -10px 100px #ff4b01;
+  }
+}
