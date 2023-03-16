@@ -19,5 +19,11 @@ application.register("post", PostController)
 import SearchGroupsController from "./search_groups_controller"
 application.register("search-groups", SearchGroupsController)
 
+import ShareController from "./share_controller"
+application.register("share", ShareController)
+
 import ShowController from "./show_controller"
 application.register("show", ShowController)
+
+import TabController from "./tab_controller"
+application.register("tab", TabController)

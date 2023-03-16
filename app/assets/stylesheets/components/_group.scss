@@ -336,7 +336,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
       position: absolute;
       top: 0;
       left: 0;
-      background-color: #ff4014;
+      background-color:#4CAF50;
       height: 50px;
       box-shadow: 0px 3px 6px 3px white;
 
@@ -350,6 +350,23 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
         background-color: #faa000;
         box-shadow: 0px 3px 6px 3px white;
       }
+      color: white;
+    }
+
+    .bttnn1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: red;
+      height: 50px;
+      box-shadow: 0px 3px 6px 3px white;
+
+      width: 100%;
+      padding-bottom: 14px;
+      padding-top: 11px;
+      text-decoration: none;
+      border-color: transparent;
+      cursor: pointer;
       color: white;
     }
 
@@ -532,8 +549,8 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
 
   .back_to_groups {
     position: absolute;
-    left: 1193px;
-    top: 921px;
+    left: 1198px;
+    top: 929px;
     right: 0;
   }
 
