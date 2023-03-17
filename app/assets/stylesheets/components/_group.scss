@@ -446,6 +446,13 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
       height: 77px;
       overflow: hidden;
       transition: .3s all ease-in-out;
+      max-width: 80vw;
+      width: auto;
+      display: block;
+      p {
+        width: 550px;
+        display: block;
+      }
     }
 
     .posts-container {
@@ -518,7 +525,7 @@ $readd-more-height: map-get($readd-more, 'font-size') * map-get($readd-more, 'li
   .tab-content {
     margin-left: 62px;
     margin-right: 70px;
-    
+
   }
 
   .tab-content .active {
