@@ -252,13 +252,16 @@ tr td{
     height: 140px;
     position: relative;
     perspective: 1000px;
+    min-height: 330px;
   }
+
   #carousel{
     width: 100%;
     height: 100%;
     position: absolute;
     transform-style: preserve-3d;
     animation: rotation 20s infinite linear;
+    top: 96px;
   }
   #carousel:hover{
     animation-play-state: paused;
@@ -266,11 +269,10 @@ tr td{
   #carousel figure{
     display: block;
     position: absolute;
-    width: 186px;
-    height: 116px;
+    width: 182px;
+    height: 185px;
     left: 10px;
     top: 10px;
-
     overflow: hidden;
     border: solid 5px #faf6f5;
   }
@@ -285,9 +287,9 @@ tr td{
   #carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
 
   img{
-    -webkit-filter: grayscale(1);
     cursor: pointer;
     transition: all .5s ease;
+    height: 165px;
   }
   img:hover{
     transform: scale(1.2,1.2);
@@ -302,7 +304,7 @@ tr td{
     }
   }
   .my-carousel{
-  margin: 20px !important;
+    margin: 20px !important;
   }
   .founds{
     font-family: Arial, sans-serif;
