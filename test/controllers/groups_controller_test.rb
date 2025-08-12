@@ -1,17 +1,16 @@
 require "test_helper"
 
-class PostsControllerTest < ActionDispatch::IntegrationTest
+class GroupsControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
-  test "invalid post params render new with errors" do
+  test "invalid group params renders new with errors" do
     user = User.create!(email: "user@example.com", password: "password")
     sign_in user
     category = Category.create!(name: "Sports")
     city = City.create!(name: "Metropolis")
-    group = Group.create!(title: "Group", description: "desc", user: user, category: category, city: city)
 
-    assert_no_difference("Post.count") do
-      post group_posts_path(group), params: { post: { content: "" } }
+    assert_no_difference("Group.count") do
+      post groups_path, params: { group: { title: "", description: "desc", category_id: category.id, city_id: city.id } }
     end
 
     assert_response :success

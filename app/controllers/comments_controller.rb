@@ -6,13 +6,14 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.post_id = params["post_id"]
     @post = Post.find(params["post_id"])
-    if @comment.save!
+    if @comment.save
       respond_to do |format|
         format.html { redirect_to post_path(@comment.post_id), notice: 'comment was successfully created.' }
         format.text { render partial: "posts/comments", locals: { post: @post }, formats: [:html] }
       end
 
     else
+      @post = Post.find(params["post_id"])
       render :new
     end
   end

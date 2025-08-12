@@ -1,0 +1,14 @@
+<h1>New Post</h1>
+<%= form_with model: @post, url: group_posts_path(@group) do |form| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.text_area :content %>
+  <%= form.submit %>
+<% end %>
