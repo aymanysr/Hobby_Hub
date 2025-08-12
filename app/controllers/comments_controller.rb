@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
       end
 
     else
+      @post = Post.find(params["post_id"])
       render :new
     end
   end
