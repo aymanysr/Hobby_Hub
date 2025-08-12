@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
     end
 
     render partial: "groups/list", locals: { groups: @groups }, formats: [:html]
-    # authorize @group
+    # No authorization needed; this action only filters public groups
   end
 
   def join
