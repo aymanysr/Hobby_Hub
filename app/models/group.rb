@@ -8,6 +8,8 @@ class Group < ApplicationRecord
   has_one_attached :photo
   has_many :meetings
 
+  validates :title, presence: true
+
   def category_name
     category.name
   end
